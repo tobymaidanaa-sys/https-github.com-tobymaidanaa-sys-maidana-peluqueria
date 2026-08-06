@@ -1,6 +1,6 @@
 ---
 name: creador-de-landing
-description: Crea la landing page de un cliente nuevo, de punta a punta — una sola página en HTML, CSS y JS vanilla, sin build ni dependencias, siempre en blanco y negro. Necesita tres datos antes de escribir una línea de código: nombre de la página, rubro y tono. Usalo cada vez que entre un cliente nuevo y haya que armarle una página, un sitio, una landing o una web de presentación, aunque no usen la palabra "landing" — "armale una página a la barbería de Nico", "necesito un sitio para un estudio contable", "hacé la web del cliente nuevo", "make a landing page for a client" son todos casos de este skill. Usalo también para rehacer desde cero la página de un cliente que ya existe.
+description: Crea la landing page de un cliente nuevo, de punta a punta — una sola página en HTML, CSS y JS vanilla, sin build ni dependencias, siempre en blanco y negro. Necesita tres datos antes de escribir una línea de código — nombre de la página, rubro y tono. Usalo cada vez que entre un cliente nuevo y haya que armarle una página, un sitio, una landing o una web de presentación, aunque no usen la palabra "landing" — "armale una página a la barbería de Nico", "necesito un sitio para un estudio contable", "hacé la web del cliente nuevo", "make a landing page for a client" son todos casos de este skill. Usalo también para rehacer desde cero la página de un cliente que ya existe.
 ---
 
 # Creador de landing
