@@ -21,17 +21,25 @@ Para publicarla, subí la carpeta `closer/` entera a donde la tengas alojada.
 
 ## Cómo cambiar las fotos
 
-Hoy están los placeholders grises. Reemplazalos por fotos reales **con el mismo
-nombre de archivo** y no hay que tocar el HTML.
+Ya están las fotos reales del salón. Para cambiar alguna, guardá la nueva
+**con el mismo nombre de archivo** y no hay que tocar el HTML.
 
-| Archivo | Dónde aparece | Medida sugerida |
+| Archivo | Dónde aparece | Qué muestra hoy |
 |---|---|---|
-| `assets/img/hero.svg` | Retrato del inicio, al lado del nombre | 1000 × 1300 px (vertical) |
-| `assets/img/trabajo-1.svg` | Galería, la primera (la más alta) | 900 × 1350 px (vertical) |
-| `assets/img/trabajo-2.svg` | Galería | 900 × 1200 px (vertical) |
-| `assets/img/trabajo-3.svg` | Galería | 900 × 1200 px (vertical) |
-| `assets/img/trabajo-4.svg` | Galería | 900 × 1200 px (vertical) |
-| `assets/img/salon.svg` | Sección "El salón" | 1000 × 1250 px (vertical) |
+| `assets/img/hero.jpg` | Retrato del inicio, al lado del nombre | Ondas largas en castaño |
+| `assets/img/trabajo-1.jpg` | Galería, la primera (la más alta) | Peinado de ondas rubias |
+| `assets/img/trabajo-2.jpg` | Galería | Corte mullet oscuro |
+| `assets/img/trabajo-3.jpg` | Galería | Color cobrizo con rulos |
+| `assets/img/trabajo-4.jpg` | Galería | Color y mechas rubias |
+| `assets/img/trabajo-5.jpg` | Galería | Color castaño con reflejos |
+| `assets/img/salon.jpg` | Sección "Adentro" | El local |
+
+Van todas **verticales**, cerca de 960 × 1280 px. No hace falta recortarlas a
+medida: la página las encuadra sola con `object-fit`. Si una queda mal
+encuadrada, se ajusta el `object-position` de esa sección en el `styles.css`.
+
+Si cambiás una foto, cambiá también su texto alternativo (el `alt=` en el
+`index.html`), que describe lo que se ve para quien no puede verla.
 
 Son todas verticales porque el material real de una peluquería es el retrato:
 una foto apaisada corta el pelo justo donde se ve el trabajo. La del salón
@@ -91,7 +99,6 @@ si lo cambiás, cambialo en los 5.
 Están marcados en el `index.html` con el comentario `<!-- TODO -->`, así se
 encuentran rápido:
 
-- [ ] **Fotos reales.** Hoy hay placeholders grises en los 6 lugares.
 - [ ] **El logo original**, si existe: hoy está la reconstrucción vectorial.
 - [ ] **Precios de los servicios.** Los 6 dicen "Consultar".
 - [ ] **Confirmar el texto de "Adentro".** La frase sobre el turno reservado
