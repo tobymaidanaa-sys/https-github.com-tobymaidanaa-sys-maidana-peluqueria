@@ -93,7 +93,6 @@ Están todas las fotos reales del salón. Para cambiar alguna, guardá la nueva
 |---|---|---|
 | `hero.jpg` | Adentro del espejo del inicio | Peinado de cola alta, de perfil |
 | `nosotros.jpg` | Sección "Nosotros", a la derecha | Corte largo en capas, castaño oscuro |
-| `servicios.jpg` | Cierra la columna derecha de la carta | Iluminación cálida, de espaldas |
 | `trabajo-1.jpg` | Galería | Balayage rubio sobre pelo largo |
 | `trabajo-2.jpg` | Galería | Iluminación con contorno, ondas rubias |
 | `trabajo-3.jpg` | Galería | Color cobrizo sobre rulos |
@@ -106,7 +105,7 @@ Están todas las fotos reales del salón. Para cambiar alguna, guardá la nueva
 | `salon.jpg` | Sección "Adentro" | El local |
 
 Van todas **verticales**: 900 × 1200 px las de la galería, 1000 × 1333 px las
-tres destacadas. No hace falta recortarlas a medida: la página las encuadra
+dos destacadas. No hace falta recortarlas a medida: la página las encuadra
 sola con `object-fit`. Si una queda mal encuadrada, se ajusta el
 `object-position` de esa sección en el `styles.css`.
 
@@ -149,13 +148,24 @@ encuentran rápido:
 
 - [ ] **Fecha de actualización de los precios.** Conviene mostrarla, para que
       nadie llegue con una lista vieja.
-- [ ] **Reseñas reales.** La sección existe y está vacía a propósito: dice que
-      el espacio está reservado. Cuando lleguen las reseñas de verdad, se
-      reemplaza el bloque `.resenas__vacio` por una lista y listo. **No se
-      inventan testimonios.**
 - [ ] **Imagen para compartir** (`og:image`): una foto de 1200 × 630 px
       guardada como `assets/img/og.jpg`, y descomentar la línea del `<head>`.
 - [ ] **El logo original**, si existe: hoy está la reconstrucción vectorial.
+
+## Las reseñas
+
+Son reales, copiadas de Google palabra por palabra, y están escritas a mano en
+la sección "Reseñas" del `index.html`. Para agregar una, se copia un
+`<li class="resena">` entero y se cambian el texto, el nombre y la fecha.
+
+**No se inventan ni se retocan.** Los errores de tipeo son de quien las
+escribió y se dejan como están: la propia sección dice que van sin retoques, y
+corregirlas sería desmentirla. Si alguna vez hay que sacar una, se borra el
+`<li>` y listo.
+
+Las estrellas son cinco caracteres `★` con un `aria-label` al lado que dice la
+puntuación en palabras, para quien navega con lector de pantalla: los símbolos
+solos no se leen bien.
 
 ## Las decisiones de diseño, por si alguien retoca esto más adelante
 
