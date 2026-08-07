@@ -227,7 +227,7 @@ a{ color:inherit; }
    un solo easing. Todo lo demás en la página se queda quieto.
    ----------------------------------------------------------- */
 .hero{
-  padding-top:calc(var(--alto-head) + clamp(3rem, 9vw, 6.5rem));
+  padding-top:calc(var(--alto-head) + clamp(2.2rem, 6vw, 4.2rem));
   padding-bottom:0;
 }
 
@@ -239,7 +239,7 @@ a{ color:inherit; }
 
 .hero__h1{
   font-family:var(--display);
-  font-size:clamp(4.2rem, 20vw, 15rem);
+  font-size:clamp(4.2rem, 17vw, 12rem);
   line-height:.85;
   letter-spacing:.012em;
   margin:0;
@@ -252,36 +252,38 @@ a{ color:inherit; }
   to  { letter-spacing:.012em; opacity:1; }
 }
 
+/* Debajo del nombre: a la izquierda la bajada y el botón, a la derecha
+   el retrato. La foto es vertical porque el retrato es el material real
+   de una peluquería; una banda apaisada le cortaría el pelo. */
 .hero__pie{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:2.5rem;
-  align-items:end;
-  margin-top:clamp(2.2rem, 5vw, 3.5rem);
-  padding-bottom:clamp(3rem, 7vw, 5rem);
+  grid-template-columns:minmax(0,1fr) minmax(0,.92fr);
+  gap:clamp(2rem, 5vw, 4rem);
+  align-items:start;   /* el botón tiene que entrar sin scrollear */
+  margin-top:clamp(1.8rem, 4vw, 3rem);
+  padding-bottom:clamp(3.5rem, 8vw, 6rem);
+}
+
+.hero__txt{
+  display:flex; flex-direction:column; align-items:flex-start;
+  gap:clamp(1.8rem, 4vw, 2.6rem);
+  padding-top:.6rem;
 }
 
 .hero__bajada{
   margin:0;
-  max-width:34ch;
-  font-size:clamp(1.02rem, .95rem + .4vw, 1.25rem);
+  max-width:32ch;
+  font-size:clamp(1.02rem, .95rem + .4vw, 1.3rem);
   color:var(--gris-claro);
 }
 
-.hero__acc{
-  display:flex; flex-wrap:wrap; align-items:center;
-  gap:1.6rem;
-  justify-content:flex-end;
-}
-
-.hero__foto{
-  margin:0;
-  overflow:hidden;
-}
+.hero__foto{ margin:0; overflow:hidden; }
 .hero__foto img{
   width:100%;
-  aspect-ratio:16/9;
+  aspect-ratio:10/13;
+  max-height:62vh;              /* que no empuje el botón fuera de pantalla */
   object-fit:cover;
+  object-position:center 22%;   /* deja la cara y el pelo dentro del recorte */
   animation:aproximar 1.8s var(--ease) both;
 }
 
@@ -291,9 +293,12 @@ a{ color:inherit; }
 }
 
 @media (max-width:760px){
-  .hero__pie{ grid-template-columns:1fr; gap:2rem; }
-  .hero__acc{ justify-content:flex-start; }
-  .hero__foto img{ aspect-ratio:4/3; }
+  .hero__pie{
+    grid-template-columns:1fr;
+    gap:2.5rem;
+    align-items:start;
+  }
+  .hero__foto img{ aspect-ratio:4/5; }
 }
 
 

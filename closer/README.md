@@ -26,12 +26,16 @@ nombre de archivo** y no hay que tocar el HTML.
 
 | Archivo | Dónde aparece | Medida sugerida |
 |---|---|---|
-| `assets/img/hero.svg` | Foto grande del inicio | 1800 × 1000 px (apaisada) |
+| `assets/img/hero.svg` | Retrato del inicio, al lado del nombre | 1000 × 1300 px (vertical) |
 | `assets/img/trabajo-1.svg` | Galería, la primera (la más alta) | 900 × 1350 px (vertical) |
 | `assets/img/trabajo-2.svg` | Galería | 900 × 1200 px (vertical) |
 | `assets/img/trabajo-3.svg` | Galería | 900 × 1200 px (vertical) |
 | `assets/img/trabajo-4.svg` | Galería | 900 × 1200 px (vertical) |
 | `assets/img/salon.svg` | Sección "El salón" | 1400 × 1000 px (apaisada) |
+
+Las de la galería y el inicio son retratos porque el material real de una
+peluquería es el retrato: una foto apaisada le corta el pelo justo donde se
+ve el trabajo. La única apaisada es la del salón, que muestra el local.
 
 Dos cosas importantes:
 
