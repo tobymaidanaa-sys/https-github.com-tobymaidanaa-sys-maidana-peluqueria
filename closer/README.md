@@ -74,8 +74,13 @@ reemplazalo **en todos los lugares donde aparece**:
 | WhatsApp (link) | `wa.me/5491127149770` | 5 |
 | Teléfono (link para llamar) | `tel:+5491127149770` | 1 |
 | Teléfono (texto visible) | `11 2714-9770` | 3 |
-| Instagram | `closerpeluqueria` | 3 (link, texto visible y un comentario) |
+| Instagram | `closer_peluqueria` | 2 |
+| Dirección | `Gorriti 4735` | 2 (la sección "Adentro" y el pie) |
+| Horarios | `10 a 19` | 2 |
 | Nombre del negocio | `Closer` | en el título, el logo, el pie y los textos |
+
+Si cambia la dirección, acordate del **mapa**: es un `iframe` de Google Maps
+dentro de la sección "Adentro" y lleva la dirección escrita en el `src`.
 
 El mensaje que ya viene escrito cuando alguien abre el WhatsApp es
 *"Hola Closer, quiero pedir un turno"*. Está en la parte `?text=` de los links:
@@ -92,11 +97,6 @@ encuentran rápido:
 - [ ] **Confirmar el texto de "Adentro".** La frase sobre el turno reservado
       la escribimos nosotros, no vino del cliente: hay que chequear que sea
       cierta antes de publicar.
-- [ ] **Dirección del salón** y **horarios de atención**: dicen "A confirmar".
-- [ ] **Mapa de Google**: cuando haya dirección, se pega el `iframe`
-      (en Google Maps: Compartir → Insertar un mapa → copiar el código).
-- [ ] **Usuario real de Instagram.** Está puesto `@closerpeluqueria` como
-      supuesto.
 - [ ] **Imagen para compartir** (`og:image`): una foto de 1200 × 630 px
       guardada como `assets/img/og.jpg`, y descomentar la línea del `<head>`.
 

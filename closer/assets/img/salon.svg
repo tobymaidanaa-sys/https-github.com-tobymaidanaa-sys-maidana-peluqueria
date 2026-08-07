@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250" role="img" aria-label="Placeholder">
-  <rect width="1000" height="1250" fill="#d9d7d4"/>
-  <g stroke="#8d8d8d" stroke-width="2" opacity=".55">
-    <line x1="0" y1="0" x2="1000" y2="1250"/>
-    <line x1="1000" y1="0" x2="0" y2="1250"/>
-    <rect x="1" y="1" width="998" height="1248" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250" role="img" aria-label="Espacio reservado para una foto">
+  <rect width="1000" height="1250" fill="#D5D2CE"/>
+  <g transform="translate(-306.0 125.9) scale(1.7714)">
+    <mask id="m-salon.svg">
+      <rect x="280" y="60" width="360" height="380" fill="#fff"/>
+      <rect x="455" y="150" width="185" height="200" fill="#000"/>
+    </mask>
+    <path d="M 280 250 a 175 175 0 1 0 350 0 a 175 175 0 1 0 -350 0 Z M 379 250 a 106 133 0 1 0 212 0 a 106 133 0 1 0 -212 0 Z" fill-rule="evenodd" fill="#9E9B96" mask="url(#m-salon.svg)"/>
   </g>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a4a4a" text-anchor="middle">
-    <text x="500" y="619" font-size="30" letter-spacing="6">EL SALON</text>
-    <text x="500" y="659" font-size="22" letter-spacing="3" fill="#6f6f6f">1000 x 1250</text>
+  <g font-family="'Archivo', system-ui, sans-serif" fill="#9E9B96" text-anchor="middle">
+    <text x="500" y="1000" font-size="42"
+          letter-spacing="12" font-weight="500">EL SALÓN</text>
+    <text x="500" y="1056.25" font-size="32"
+          letter-spacing="7" opacity=".72">1000 x 1250</text>
   </g>
 </svg>

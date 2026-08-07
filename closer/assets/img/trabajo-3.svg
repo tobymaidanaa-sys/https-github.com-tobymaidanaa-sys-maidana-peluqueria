@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Placeholder">
-  <rect width="900" height="1200" fill="#cbc9c6"/>
-  <g stroke="#8d8d8d" stroke-width="2" opacity=".55">
-    <line x1="0" y1="0" x2="900" y2="1200"/>
-    <line x1="900" y1="0" x2="0" y2="1200"/>
-    <rect x="1" y="1" width="898" height="1198" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="Espacio reservado para una foto">
+  <rect width="900" height="1200" fill="#D5D2CE"/>
+  <g transform="translate(-275.4 147.4) scale(1.5943)">
+    <mask id="m-trabajo-3.svg">
+      <rect x="280" y="60" width="360" height="380" fill="#fff"/>
+      <rect x="455" y="150" width="185" height="200" fill="#000"/>
+    </mask>
+    <path d="M 280 250 a 175 175 0 1 0 350 0 a 175 175 0 1 0 -350 0 Z M 379 250 a 106 133 0 1 0 212 0 a 106 133 0 1 0 -212 0 Z" fill-rule="evenodd" fill="#9E9B96" mask="url(#m-trabajo-3.svg)"/>
   </g>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a4a4a" text-anchor="middle">
-    <text x="450" y="594" font-size="30" letter-spacing="6">TRABAJO 3</text>
-    <text x="450" y="634" font-size="22" letter-spacing="3" fill="#6f6f6f">900 x 1200</text>
+  <g font-family="'Archivo', system-ui, sans-serif" fill="#9E9B96" text-anchor="middle">
+    <text x="450" y="960" font-size="38"
+          letter-spacing="11" font-weight="500">TRABAJO 3</text>
+    <text x="450" y="1014" font-size="29"
+          letter-spacing="6" opacity=".72">900 x 1200</text>
   </g>
 </svg>

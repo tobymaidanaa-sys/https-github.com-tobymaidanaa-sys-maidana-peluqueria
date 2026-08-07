@@ -1,12 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1300" width="1000" height="1300" role="img" aria-label="Placeholder">
-  <rect width="1000" height="1300" fill="#d8d6d3"/>
-  <g stroke="#8d8d8d" stroke-width="2" opacity=".55">
-    <line x1="0" y1="0" x2="1000" y2="1300"/>
-    <line x1="1000" y1="0" x2="0" y2="1300"/>
-    <rect x="1" y="1" width="998" height="1298" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1300" width="1000" height="1300" role="img" aria-label="Espacio reservado para una foto">
+  <rect width="1000" height="1300" fill="#E3E1DD"/>
+  <g transform="translate(-306.0 148.6) scale(1.7714)">
+    <mask id="m-hero.svg">
+      <rect x="280" y="60" width="360" height="380" fill="#fff"/>
+      <rect x="455" y="150" width="185" height="200" fill="#000"/>
+    </mask>
+    <path d="M 280 250 a 175 175 0 1 0 350 0 a 175 175 0 1 0 -350 0 Z M 379 250 a 106 133 0 1 0 212 0 a 106 133 0 1 0 -212 0 Z" fill-rule="evenodd" fill="#B9B6B1" mask="url(#m-hero.svg)"/>
   </g>
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a4a4a" text-anchor="middle">
-    <text x="500" y="644" font-size="30" letter-spacing="6">FOTO PRINCIPAL</text>
-    <text x="500" y="684" font-size="22" letter-spacing="3" fill="#6f6f6f">1000 x 1300</text>
+  <g font-family="'Archivo', system-ui, sans-serif" fill="#B9B6B1" text-anchor="middle">
+    <text x="500" y="1040" font-size="42"
+          letter-spacing="12" font-weight="500">FOTO PRINCIPAL</text>
+    <text x="500" y="1098.5" font-size="32"
+          letter-spacing="7" opacity=".72">1000 x 1300</text>
   </g>
 </svg>
