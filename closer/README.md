@@ -1,8 +1,8 @@
 # Closer Peluquería — la página
 
 Una sola página, en HTML, CSS y JavaScript escritos a mano. No usa ningún
-programa raro ni necesita internet para funcionar: son cuatro archivos y una
-carpeta de fotos.
+programa raro ni necesita internet para funcionar: son cuatro archivos, una
+carpeta de fotos y otra de tipografías.
 
 ```
 closer/
@@ -10,7 +10,9 @@ closer/
   assets/
     styles.css      cómo se ve
     script.js       lo poco que se mueve
-    img/            las fotos
+    fuentes.css     declara las tipografías
+    fuentes/        los archivos .woff2 de Fraunces y Karla
+    img/            las fotos, el logo y el favicon
   README.md         esto
 ```
 
@@ -19,6 +21,43 @@ closer/
 Doble clic en `index.html` y se abre en el navegador. No hace falta nada más.
 Para publicarla, subí la carpeta `closer/` entera a donde la tengas alojada.
 
+> El **mapa** es lo único que necesita internet: es un `iframe` de Google Maps.
+> Abriendo el archivo sin conexión vas a ver un recuadro vacío en su lugar, y
+> está bien: online carga.
+
+## Los datos del negocio
+
+Todo está escrito a mano en `index.html`. Si cambia alguno, buscalo con
+`Ctrl+F` y reemplazalo **en todos los lugares donde aparece**:
+
+| Dato | Cómo buscarlo | Veces |
+|---|---|---|
+| WhatsApp (link) | `wa.me/5491127149770` | 5 |
+| Teléfono (link para llamar) | `tel:+5491127149770` | 2 |
+| Teléfono (texto visible) | `11 2714-9770` | 3 |
+| Instagram | `closer_peluqueria` | 6 |
+| Dirección | `Gorriti 4735` | 6 |
+| Horario largo | `10:00 a 19:30` | 2 |
+| Horario corto | `10:00 a 17:00` | 2 |
+
+Si cambia la **dirección**, acordate del mapa: lleva la dirección escrita
+adentro del `src` del `iframe`, en la sección "Adentro".
+
+El mensaje que ya viene escrito cuando alguien abre el WhatsApp es
+*"Hola Closer, quiero pedir un turno"*. Está en la parte `?text=` de los
+links: si lo cambiás, cambialo en los 5.
+
+### Los horarios que están publicados
+
+| Día | Horario |
+|---|---|
+| Lunes, martes, miércoles y viernes | 10:00 a 19:30 |
+| Jueves | 10:00 a 17:00 |
+| Sábado | 10:00 a 17:00 |
+| Domingo | Cerrado |
+
+Aparecen en dos lugares: la sección "Adentro" y el pie. Cambialos en los dos.
+
 ## Cómo cambiar las fotos
 
 Ya están las fotos reales del salón. Para cambiar alguna, guardá la nueva
@@ -26,7 +65,7 @@ Ya están las fotos reales del salón. Para cambiar alguna, guardá la nueva
 
 | Archivo | Dónde aparece | Qué muestra hoy |
 |---|---|---|
-| `assets/img/hero.jpg` | Retrato del inicio, al lado del nombre | Ondas largas en castaño |
+| `assets/img/hero.jpg` | Adentro del espejo del inicio | Ondas largas en castaño con reflejos |
 | `assets/img/trabajo-1.jpg` | Galería, la primera (la más alta) | Peinado de ondas rubias |
 | `assets/img/trabajo-2.jpg` | Galería | Corte mullet oscuro |
 | `assets/img/trabajo-3.jpg` | Galería | Color cobrizo con rulos |
@@ -47,103 +86,86 @@ también, porque muestra el local a lo largo.
 
 ### El logo
 
-`assets/img/logo.svg` es el logo (la C con la tijera) **redibujado en
-vectores a ojo, a partir de la imagen que mandó el cliente**. No es el
-archivo original: es una reconstrucción. Si aparece el original del
-diseñador —un `.ai`, `.eps` o `.svg`—, reemplazá ese archivo con el mismo
-nombre y no hay que tocar nada más.
+`assets/img/logo.svg` es el logo (la C con la tijera) **redibujado en vectores
+a ojo, a partir de la imagen que mandó el cliente**. No es el archivo original:
+es una reconstrucción. Si aparece el original del diseñador —un `.ai`, `.eps` o
+`.svg`—, reemplazá ese archivo con el mismo nombre y no hay que tocar nada más.
 
-Lo que sí tiene que cumplir el archivo: **SVG, fondo transparente y el
-dibujo en negro**. Un PNG con fondo blanco no sirve, porque arriba del todo
-el header está sobre el fondo oscuro y se vería un rectángulo blanco. La
-página se encarga de invertirlo: blanco mientras el header está sobre el
-inicio oscuro, negro cuando pasa a fondo claro.
+Lo que sí tiene que cumplir el archivo: **SVG, fondo transparente y el dibujo
+en negro**. El pie lo invierte por CSS para que se lea claro sobre el marrón.
 
-`assets/img/favicon.svg` es el iconito de la pestaña y lleva **sólo la C**,
-sin la tijera: a 32 píxeles la tijera se convierte en una mancha.
+El símbolo aparece **una sola vez en toda la página, en el pie**. Arriba va el
+wordmark tipográfico "Closer Peluquería", con las dos palabras del mismo tamaño
+y el mismo formato: es texto, no una imagen.
 
-### Por qué las fotos son lo único con color
-
-Las fotos van **a color** y todo el resto de la página —fondos, tipografía,
-botones— es blanco y negro. En una peluquería el color del pelo es el trabajo
-que se vende, así que dejarlo en escala de grises sería tapar justo lo que hay
-que mostrar. Y como no hay ningún otro color en la página, las fotos se llevan
-toda la atención solas.
-
-La única excepción es el **mapa**, que sigue en escala de grises a propósito:
-no es un trabajo del salón sino un elemento de interfaz, y a color mete los
-verdes y amarillos de Google. Si alguna vez lo quieren a color, se saca la
-línea `filter:grayscale(1);` de la regla `.mapa` en el `styles.css`.
-
-Guardá las fotos en `.jpg` con el nombre exacto de la tabla y no hay que tocar
-el `index.html`. Si le cambiás la extensión a alguna, cambiala también ahí.
-
-## Datos escritos a mano en el HTML
-
-Todo está en `index.html`. Si cambia alguno, buscalo con `Ctrl+F` y
-reemplazalo **en todos los lugares donde aparece**:
-
-| Dato | Cómo buscarlo | Cuántas veces aparece |
-|---|---|---|
-| WhatsApp (link) | `wa.me/5491127149770` | 5 |
-| Teléfono (link para llamar) | `tel:+5491127149770` | 1 |
-| Teléfono (texto visible) | `11 2714-9770` | 3 |
-| Instagram | `closer_peluqueria` | 2 |
-| Dirección | `Gorriti 4735` | 2 (la sección "Adentro" y el pie) |
-| Horarios | `10 a 19` | 2 |
-| Nombre del negocio | `Closer` | en el título, el logo, el pie y los textos |
-
-Si cambia la dirección, acordate del **mapa**: es un `iframe` de Google Maps
-dentro de la sección "Adentro" y lleva la dirección escrita en el `src`.
-
-El mensaje que ya viene escrito cuando alguien abre el WhatsApp es
-*"Hola Closer, quiero pedir un turno"*. Está en la parte `?text=` de los links:
-si lo cambiás, cambialo en los 5.
+`assets/img/favicon.svg` es el iconito de la pestaña y lleva **sólo la C**, sin
+la tijera: a 32 píxeles la tijera se convierte en una mancha.
 
 ## Qué quedó pendiente
 
 Están marcados en el `index.html` con el comentario `<!-- TODO -->`, así se
 encuentran rápido:
 
-- [ ] **El logo original**, si existe: hoy está la reconstrucción vectorial.
 - [ ] **Precios de los servicios.** Los 6 dicen "Consultar".
-- [ ] **Confirmar el texto de "Adentro".** La frase sobre el turno reservado
-      la escribimos nosotros, no vino del cliente: hay que chequear que sea
-      cierta antes de publicar.
+- [ ] **Reseñas reales.** La sección existe y está vacía a propósito: dice que
+      el espacio está reservado. Cuando lleguen las reseñas de verdad, se
+      reemplaza el bloque `.resenas__vacio` por una lista y listo. **No se
+      inventan testimonios.**
 - [ ] **Imagen para compartir** (`og:image`): una foto de 1200 × 630 px
       guardada como `assets/img/og.jpg`, y descomentar la línea del `<head>`.
+- [ ] **El logo original**, si existe: hoy está la reconstrucción vectorial.
 
 ## Las decisiones de diseño, por si alguien retoca esto más adelante
 
-**Color.** Blanco y negro, sin excepción. Un negro apenas suavizado (`#0B0B0B`)
-y un blanco cálido de papel de revista (`#EDEBE7`), más un gris para el texto
-secundario. No hay color de acento: si algún día Closer define uno de marca,
-tiene que aparecer en cuatro lugares como máximo y uno de ellos tiene que ser
-el botón de WhatsApp. Meterlo en más lugares le saca fuerza justo al botón que
-importa.
+**La idea.** La bio del salón dice *"cabellos que reflejan tu mejor versión"*.
+De ahí sale todo: la página está armada alrededor de un **espejo de peluquería**.
+El inicio es un espejo montado sobre un panel de pared, con una franja de luz a
+cada lado —las mismas que tiene el local de verdad, se ven en la foto del salón—
+y al cargar la página **las luces se encienden**. Es el único momento animado.
 
-Como el color es fijo, el contraste lo hacen otras cosas: secciones negras
-alternadas con secciones claras, títulos muy grandes contra textos muy chicos,
-y mucho aire entre bloques.
+Esa franja de luz vuelve, reducida a una barrita rosa, como marca de cada
+encabezado de sección, y como línea superior de los tres valores. Es el hilo que
+cose la página: si se le agregan más adornos, deja de leerse.
 
-**Tipografías.** *Instrument Serif* para los títulos y *Archivo* para el texto.
-La serif tiene el contraste alto de una tapa de revista de moda —es lo que le
-da el aire editorial— y su itálica funciona como acento, que es de dónde sale
-el énfasis cuando no hay color. Archivo es un neogrotesco neutro que sostiene
-el texto largo sin pelearse con los títulos. Las dos vienen de Google Fonts y
-se cargan en el `<head>`.
+**Color.** La paleta la definió el cliente: beige, rosa bebé, marrón y gris,
+todos mate. Están en `styles.css` como variables, arriba de todo:
 
-**El gesto.** La página tiene un solo momento animado, y es el inicio: el
-nombre "Closer" entra con las letras muy separadas y se van juntando, mientras
-la foto se aproxima. El nombre significa *más cerca*, así que la animación dice
-literalmente lo mismo que la marca. Todo el resto de la página está quieto a
-propósito: si se le agregan más animaciones, esa deja de leerse como un gesto y
-pasa a ser decoración.
+| Variable | Valor | Para qué |
+|---|---|---|
+| `--arena` | `#E7DED1` | el fondo de la página |
+| `--crema` | `#F3EDE4` | tarjetas y secciones claras |
+| `--cacao` | `#4A3A31` | texto, estructura y botón principal |
+| `--cacao-hondo` | `#332721` | las dos bandas oscuras |
+| `--rosa` | `#DFC1BC` | el acento suave: luces, barritas, CTA del cierre |
+| `--gris` | `#635A53` | texto secundario |
+| `--gris-tenue` | `#685E56` | etiquetas y metadatos |
+
+Cambiá el valor en un solo lugar y cambia en toda la página. **Ojo con aclarar
+los grises**: por encima de `#6B615A` el texto chico deja de cumplir el
+contraste mínimo de accesibilidad. Todo el texto de la página pasa WCAG AA hoy.
+
+**Tipografías.** *Fraunces* para los títulos y *Karla* para el texto. Fraunces
+es una serif de contraste alto pero de formas blandas: da lo femenino y cuidado
+sin caer en la serif de tapa de revista que usa todo el mundo. Su itálica es el
+acento —"reflejan", "empieza con un mensaje"— y funciona como énfasis sin
+necesidad de meter otro color. Karla sostiene el texto largo sin pelearse.
+
+Las dos están **guardadas en el proyecto** (`assets/fuentes/`), no traídas de
+Google Fonts. Así la página carga más rápido, no le pasa datos de las visitas a
+un tercero, y funciona con doble clic aunque no haya internet.
+
+**Sin numerar.** Los servicios y los valores no llevan `01 / 02 / 03`. Numerar
+sirve cuando el orden significa algo —un proceso, una cronología—, y acá no:
+son seis servicios simultáneos y tres valores simultáneos. Numerarlos sería
+decorar.
 
 **El botón de contacto.** Es el elemento más importante y por eso aparece tres
 veces: arriba de todo, en la sección "Turnos" y en el cierre. En celulares hay
-además una barra fija abajo que aparece apenas se pasa el inicio.
+además una barra fija abajo que aparece apenas se pasa el inicio. El del cierre
+va en rosa sobre el marrón, que es el único lugar donde el acento suave se usa
+en grande.
 
-**Accesibilidad.** La página se puede recorrer entera con el teclado (el foco
-se ve), todas las fotos tienen texto alternativo, y si alguien tiene activada
-la opción del sistema de "reducir movimiento", no se mueve nada.
+**Accesibilidad.** La página se puede recorrer entera con el teclado (el foco se
+ve), todas las fotos tienen texto alternativo, el contraste de todo el texto
+cumple WCAG AA, y si alguien tiene activada la opción del sistema de "reducir
+movimiento", no se mueve nada.

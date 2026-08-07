@@ -4,23 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Closer Peluquería — Corte y color en Palermo Soho</title>
-<meta name="description" content="Peluquería en Gorriti 4735, Palermo Soho. Corte, color, mechas y tratamientos con turno reservado, de lunes a sábados de 10 a 19. Pedí tu turno por WhatsApp.">
+<title>Closer Peluquería — Cabellos que reflejan tu mejor versión</title>
+<meta name="description" content="Peluquería en Gorriti 4735, Palermo Soho. Mary Fernández atiende personalmente cada servicio: corte, color, mechas, balayage, tratamientos, brushing y alisado. Pedí tu turno por WhatsApp.">
 
 <!-- Open Graph: lo que se ve cuando alguien comparte el link -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Closer Peluquería — Corte y color en Palermo Soho">
-<meta property="og:description" content="Un turno por vez, sin apuro. Gorriti 4735, Palermo Soho. Pedí tu turno por WhatsApp.">
+<meta property="og:title" content="Closer Peluquería — Cabellos que reflejan tu mejor versión">
+<meta property="og:description" content="Gorriti 4735, Palermo Soho. La salud del cabello antes que la moda. Pedí tu turno por WhatsApp.">
 <meta property="og:locale" content="es_AR">
 <!-- TODO: subir una foto real de 1200x630 px como assets/img/og.jpg y descomentar -->
 <!-- <meta property="og:image" content="assets/img/og.jpg"> -->
 
+<meta name="theme-color" content="#E7DED1">
+
 <!-- Favicon: la C del logo, sin la tijera (a 32 px se vuelve una mancha). -->
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Las tipografías viven en el proyecto (assets/fuentes/), no en Google
+     Fonts: así la página carga más rápido, no le pasa datos de tus visitas
+     a un tercero y funciona con doble clic aunque no haya internet. -->
+<link rel="stylesheet" href="assets/fuentes.css">
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -31,61 +34,62 @@
 <a class="skip" href="#contenido">Ir al contenido</a>
 
 <!-- ============================================================
-     HEADER — fijo. Arranca transparente sobre el hero negro y
-     pasa a fondo claro al scrollear (clase .is-scrolled desde el JS).
+     HEADER — el wordmark va con las dos palabras del mismo tamaño
+     y el mismo formato. El símbolo (la C con la tijera) no va acá:
+     va una sola vez, al final de la página, en el pie.
      ============================================================ -->
-<header class="head" id="head">
-  <div class="wrap head__in">
-    <!-- El logo está redibujado en vectores a partir de la imagen del cliente.
-         Si aparece el archivo original del diseñador, reemplazá logo.svg y
-         listo: la página no necesita ningún otro cambio. -->
-    <a class="head__logo" href="#inicio">
-      <img class="head__logo-img" src="assets/img/logo.svg" alt="Closer Peluquería">
+<header class="cabecera" id="cabecera">
+  <div class="ancho cabecera__in">
+    <a class="marca" href="#inicio">
+      <span class="marca__p">Closer</span>
+      <span class="marca__p">Peluquería</span>
     </a>
 
-    <nav class="head__nav" aria-label="Secciones">
-      <a href="#trabajo">Servicios</a>
+    <nav class="menu" aria-label="Secciones">
+      <a href="#servicios">Servicios</a>
       <a href="#trabajos">Trabajos</a>
       <a href="#salon">El salón</a>
       <a href="#turnos">Turnos</a>
     </nav>
 
-    <a class="btn btn--sm head__cta"
+    <a class="boton boton--chico cabecera__cta"
        href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
-       target="_blank" rel="noopener">Pedir turno</a>
+       target="_blank" rel="noopener">Reservar turno</a>
   </div>
 </header>
 
 <main id="contenido">
 
   <!-- ============================================================
-       HERO — la tesis de la página. Acá va el único gesto animado:
-       "acercarse". El nombre entra con las letras separadas y se
-       juntan, y la foto se aproxima. Mismo timing, un solo momento.
+       HERO — el gesto de la página. La bio de Closer dice "cabellos
+       que REFLEJAN", así que el inicio es un espejo de salón: la foto
+       en arco, y a los costados las dos franjas de luz que tiene el
+       local de verdad. Al cargar, las luces se encienden. Es el único
+       momento animado; el resto de la página está quieto a propósito.
        ============================================================ -->
-  <section class="hero section--ink" id="inicio">
-    <div class="wrap">
+  <section class="hero" id="inicio">
+    <div class="ancho hero__in">
 
-      <p class="kicker hero__kicker">Peluquería · Palermo Soho</p>
-
-      <div class="hero__titulo">
-        <h1 class="hero__h1">Closer</h1>
+      <div class="hero__txt">
+        <p class="volanta">Peluquería · Palermo Soho</p>
+        <h1 class="hero__h1">Cabellos que <em>reflejan</em> tu mejor versión</h1>
+        <p class="hero__bajada">
+          Mary Fernández atiende personalmente cada servicio. Sin modas ni
+          estereotipos: se trabaja sobre el cabello que tenés y sobre lo que
+          le hace bien.
+        </p>
+        <a class="boton"
+           href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+           target="_blank" rel="noopener">Reservar turno por WhatsApp</a>
+        <p class="hero__pie">Gorriti 4735 · Con turno reservado</p>
       </div>
 
-      <div class="hero__pie">
-        <div class="hero__txt">
-          <p class="hero__bajada">
-            Trabajamos de cerca. Un turno por vez, sin apuro,
-            mirando el pelo que tenés antes de decidir el que vas a llevar.
-          </p>
-          <a class="btn"
-             href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
-             target="_blank" rel="noopener">Pedir turno por WhatsApp</a>
-        </div>
-
-        <figure class="hero__foto">
+      <div class="espejo">
+        <span class="espejo__luz espejo__luz--izq" aria-hidden="true"></span>
+        <span class="espejo__luz espejo__luz--der" aria-hidden="true"></span>
+        <figure class="espejo__marco">
           <img src="assets/img/hero.jpg" width="960" height="1280"
-               alt="Melena larga castaña con ondas marcadas y reflejos, hecha en Closer Peluquería">
+               alt="Melena larga castaña con ondas marcadas y reflejos dorados, hecha en Closer Peluquería">
         </figure>
       </div>
 
@@ -94,75 +98,68 @@
 
 
   <!-- ============================================================
-       SERVICIOS — lista editorial numerada. Los precios están
-       pendientes: ver los TODO de abajo.
+       NOSOTROS — storytelling breve. Todo el contenido de esta
+       sección lo confirmó el cliente; no hay nada supuesto.
        ============================================================ -->
-  <section class="section" id="trabajo">
-    <div class="wrap">
-      <div class="cab">
-        <p class="kicker">01 — Servicios</p>
-        <h2 class="h2">El trabajo</h2>
+  <section class="seccion nosotros" id="nosotros">
+    <div class="ancho nosotros__in">
+      <div class="cabeza">
+        <p class="volanta">Nosotros</p>
+        <h2 class="h2">Un salón,<br>una sola persona<br>en el espejo</h2>
       </div>
 
-      <ul class="serv">
-        <li class="serv__i">
-          <span class="serv__n">01</span>
-          <div class="serv__txt">
-            <h3 class="serv__t">Corte</h3>
-            <p>Lavado, corte y secado. Se define en el espejo, con vos, antes de la primera tijera.</p>
-          </div>
-          <!-- TODO: precio. Reemplazá "Consultar" por el valor, ej: $ 18.000 -->
-          <span class="serv__p">Consultar</span>
-        </li>
+      <div class="nosotros__txt">
+        <p class="destacado">
+          Closer Peluquería está dirigida por Mary Fernández, que atiende
+          personalmente cada servicio.
+        </p>
+        <p>
+          El salón existe para acompañarte a sentirte mejor con vos misma a
+          través del cuidado y la salud de tu cabello. No se trabaja siguiendo
+          modas ni estereotipos: se trabaja sobre lo que tenés y sobre lo que
+          querés, y se dice con honestidad qué le conviene a tu pelo.
+        </p>
+        <p>
+          Por eso hay una sola forma de reservar: con turno. El tuyo es tuyo,
+          y alcanza para conversar antes de decidir.
+        </p>
+      </div>
+    </div>
+  </section>
 
-        <li class="serv__i">
-          <span class="serv__n">02</span>
-          <div class="serv__txt">
-            <h3 class="serv__t">Color</h3>
-            <p>Coloración completa o retoque de raíz. Elegimos el tono contra tu piel, no contra un catálogo.</p>
-          </div>
-          <!-- TODO: precio -->
-          <span class="serv__p">Consultar</span>
-        </li>
 
-        <li class="serv__i">
-          <span class="serv__n">03</span>
-          <div class="serv__txt">
-            <h3 class="serv__t">Mechas y balayage</h3>
-            <p>Iluminación hecha a mano, mecha por mecha. Crece parejo y no te obliga a volver en un mes.</p>
-          </div>
-          <!-- TODO: precio -->
-          <span class="serv__p">Consultar</span>
-        </li>
+  <!-- ============================================================
+       IDENTIDAD — los valores, en las palabras del cliente.
+       Sin numerar: no son una secuencia, son tres cosas simultáneas.
+       ============================================================ -->
+  <section class="seccion seccion--crema" id="identidad">
+    <div class="ancho">
+      <div class="cabeza cabeza--centro">
+        <p class="volanta">Nuestra identidad</p>
+        <h2 class="h2">Cómo trabajamos</h2>
+      </div>
 
-        <li class="serv__i">
-          <span class="serv__n">04</span>
-          <div class="serv__txt">
-            <h3 class="serv__t">Tratamientos</h3>
-            <p>Nutrición, reconstrucción y botox capilar para pelo trabajado. Diagnóstico antes de aplicar.</p>
-          </div>
-          <!-- TODO: precio -->
-          <span class="serv__p">Consultar</span>
+      <ul class="valores">
+        <li class="valor">
+          <h3 class="valor__t">La salud primero</h3>
+          <p>
+            El estado del cabello manda por encima de la tendencia del momento.
+            Si algo no le va a hacer bien, te lo decimos antes de empezar.
+          </p>
         </li>
-
-        <li class="serv__i">
-          <span class="serv__n">05</span>
-          <div class="serv__txt">
-            <h3 class="serv__t">Brushing y peinado</h3>
-            <p>Para un evento o para el día a día. Si venís con la foto de lo que querés, mejor.</p>
-          </div>
-          <!-- TODO: precio -->
-          <span class="serv__p">Consultar</span>
+        <li class="valor">
+          <h3 class="valor__t">Atención al detalle</h3>
+          <p>
+            Cada servicio se hace con dedicación y sin apuro. El resultado se
+            mira de cerca, mechón por mechón, hasta que está.
+          </p>
         </li>
-
-        <li class="serv__i">
-          <span class="serv__n">06</span>
-          <div class="serv__txt">
-            <h3 class="serv__t">Alisado</h3>
-            <p>Alisado progresivo sin formol. Dura entre tres y cinco meses según el largo.</p>
-          </div>
-          <!-- TODO: precio -->
-          <span class="serv__p">Consultar</span>
+        <li class="valor">
+          <h3 class="valor__t">Autenticidad</h3>
+          <p>
+            Valoramos que cada clienta se parezca a sí misma. El vínculo se
+            construye con confianza y cercanía, visita a visita.
+          </p>
         </li>
       </ul>
     </div>
@@ -170,15 +167,73 @@
 
 
   <!-- ============================================================
-       TRABAJOS — galería. Cambiá los .svg por fotos reales:
-       ver la tabla del README.
+       SERVICIOS — sin numeración: no son pasos de un proceso, así que
+       numerarlos sería decorar. Los precios están pendientes (TODO).
        ============================================================ -->
-  <section class="section section--ink" id="trabajos">
-    <div class="wrap">
-      <div class="cab">
-        <p class="kicker">02 — Galería</p>
-        <h2 class="h2">Trabajos</h2>
-        <p class="cab__nota">Todo lo que ves acá salió de este salón.</p>
+  <section class="seccion" id="servicios">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="volanta">Servicios</p>
+        <h2 class="h2">Lo que hacemos</h2>
+      </div>
+
+      <ul class="servicios">
+        <li class="servicio">
+          <h3 class="servicio__t">Corte</h3>
+          <p class="servicio__d">Lavado, corte y secado. La forma se define en el espejo, con vos, antes de la primera tijera.</p>
+          <!-- TODO: precio. Reemplazá "Consultar" por el valor, ej: $ 18.000 -->
+          <span class="servicio__p">Consultar</span>
+        </li>
+
+        <li class="servicio">
+          <h3 class="servicio__t">Color</h3>
+          <p class="servicio__d">Coloración completa o retoque de raíz. El tono se elige contra tu piel, no contra un catálogo.</p>
+          <!-- TODO: precio -->
+          <span class="servicio__p">Consultar</span>
+        </li>
+
+        <li class="servicio">
+          <h3 class="servicio__t">Mechas y balayage</h3>
+          <p class="servicio__d">Iluminación hecha a mano, mecha por mecha, buscando que crezca parejo y sin castigar el largo.</p>
+          <!-- TODO: precio -->
+          <span class="servicio__p">Consultar</span>
+        </li>
+
+        <li class="servicio">
+          <h3 class="servicio__t">Tratamientos</h3>
+          <p class="servicio__d">Nutrición y reconstrucción para cabello trabajado. Siempre con diagnóstico previo del estado del pelo.</p>
+          <!-- TODO: precio -->
+          <span class="servicio__p">Consultar</span>
+        </li>
+
+        <li class="servicio">
+          <h3 class="servicio__t">Brushing y peinado</h3>
+          <p class="servicio__d">Para un evento o para un día cualquiera. Si venís con la foto de lo que tenés en la cabeza, mejor.</p>
+          <!-- TODO: precio -->
+          <span class="servicio__p">Consultar</span>
+        </li>
+
+        <li class="servicio">
+          <h3 class="servicio__t">Alisado</h3>
+          <p class="servicio__d">Alisado progresivo. Antes de aplicarlo se revisa el cabello y se conversa cuánto va a durar en tu caso.</p>
+          <!-- TODO: precio -->
+          <span class="servicio__p">Consultar</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TRABAJOS — banda oscura para que las fotos descansen. Son fotos
+       reales del salón: ver la tabla del README para reemplazarlas.
+       ============================================================ -->
+  <section class="seccion seccion--oscura" id="trabajos">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="volanta">Trabajos</p>
+        <h2 class="h2">Hecho en Closer</h2>
+        <p class="cabeza__nota">Todo lo que ves acá salió de este salón.</p>
       </div>
 
       <div class="galeria">
@@ -203,48 +258,52 @@
                alt="Color castaño con reflejos sobre pelo largo y liso, hecho en Closer">
         </figure>
       </div>
+
+      <p class="galeria__ig">
+        Hay más en
+        <a href="https://instagram.com/closer_peluqueria" target="_blank" rel="noopener">@closer_peluqueria</a>
+      </p>
     </div>
   </section>
 
 
   <!-- ============================================================
-       EL SALÓN
+       EL SALÓN — lo que se describe acá está en la foto del local:
+       hormigón a la vista, plantas, espejos con luz y vidriera a la calle.
        ============================================================ -->
-  <section class="section" id="salon">
-    <div class="wrap salon">
+  <section class="seccion" id="salon">
+    <div class="ancho salon">
       <figure class="salon__foto">
         <img src="assets/img/salon.jpg" width="960" height="1280" loading="lazy"
-             alt="Interior del salón de Closer: puestos frente a los espejos, techo de hormigón y luz cálida">
+             alt="Interior del salón de Closer: los puestos frente a los espejos con luz, hormigón a la vista y plantas colgantes">
       </figure>
 
       <div class="salon__txt">
-        <p class="kicker">03 — El salón</p>
+        <p class="volanta">El salón</p>
         <h2 class="h2">Adentro</h2>
         <p>
-          Hormigón a la vista, luz cálida y plantas por todos lados.
-          Un local a la calle, con los puestos alineados frente a los espejos.
-        </p>
-        <!-- TODO: confirmar que esto es así antes de publicar. Lo escribí a partir
-             del "un turno por vez" de la página; si trabajan con más de una persona
-             a la vez, avisá y lo reescribo. -->
-        <p>
-          Se trabaja con turno reservado, para que el tuyo sea tuyo: si querés
-          cambiar algo a mitad de camino, hay tiempo para pensarlo.
+          Un local a la calle en Gorriti, con hormigón a la vista, plantas
+          colgando y los puestos alineados frente a los espejos. La luz es
+          cálida y el ritmo, tranquilo.
         </p>
 
         <dl class="datos">
-          <div>
+          <div class="datos__i">
             <dt>Dirección</dt>
-            <dd>Gorriti 4735<br>Palermo Soho</dd>
+            <dd>Gorriti 4735<br>Palermo Soho, CABA</dd>
           </div>
-          <div>
+          <div class="datos__i">
             <dt>Horarios</dt>
-            <dd>Lunes a sábados<br>de 10 a 19</dd>
+            <dd>
+              Lun, mar, mié y vie · 10:00 a 19:30<br>
+              Jueves y sábado · 10:00 a 17:00<br>
+              <span class="datos__off">Domingo cerrado</span>
+            </dd>
           </div>
         </dl>
 
-        <!-- Mapa de Google, sin API key. Va en escala de grises como las fotos. -->
-        <iframe class="mapa" title="Mapa: Gorriti 4735, Palermo Soho"
+        <!-- Mapa de Google, sin API key. Va apagado a tono con la paleta. -->
+        <iframe class="mapa" title="Mapa: Gorriti 4735, Palermo Soho, Buenos Aires"
                 src="https://maps.google.com/maps?q=Gorriti%204735%2C%20Palermo%2C%20Buenos%20Aires&z=16&output=embed"
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
@@ -253,17 +312,42 @@
 
 
   <!-- ============================================================
+       RESEÑAS — la sección queda armada pero vacía a propósito.
+       Closer todavía no tiene reseñas publicadas y no se inventan.
+       Cuando lleguen las reales, se reemplaza el bloque .resenas__vacio
+       por una lista de <blockquote> y listo.
+       ============================================================ -->
+  <section class="seccion seccion--crema" id="resenas">
+    <div class="ancho">
+      <div class="cabeza cabeza--centro">
+        <p class="volanta">Reseñas</p>
+        <h2 class="h2">Lo que dicen las clientas</h2>
+      </div>
+
+      <div class="resenas__vacio">
+        <p class="resenas__t">Espacio reservado para reseñas reales de clientas.</p>
+        <p class="resenas__d">
+          Todavía no publicamos ninguna. Cuando las haya van a ir textuales,
+          con nombre y sin retoques: es lo mínimo que pide una marca que se
+          define por la autenticidad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
        TURNOS — las tres vías de contacto.
        ============================================================ -->
-  <section class="section section--ink" id="turnos">
-    <div class="wrap">
-      <div class="cab">
-        <p class="kicker">04 — Turnos</p>
-        <h2 class="h2">Cómo pedir turno</h2>
+  <section class="seccion" id="turnos">
+    <div class="ancho">
+      <div class="cabeza">
+        <p class="volanta">Turnos</p>
+        <h2 class="h2">Cómo reservar</h2>
       </div>
 
       <div class="vias">
-        <a class="via"
+        <a class="via via--fuerte"
            href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
            target="_blank" rel="noopener">
           <span class="via__k">La forma más rápida</span>
@@ -286,35 +370,48 @@
     </div>
   </section>
 
-
-  <!-- ============================================================
-       CIERRE — el botón otra vez, sin nada alrededor.
-       ============================================================ -->
-  <section class="cierre">
-    <div class="wrap cierre__in">
-      <p class="cierre__t">Tu próximo corte<br><em>empieza con un mensaje.</em></p>
-      <a class="btn btn--lg"
-         href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
-         target="_blank" rel="noopener">Pedir turno por WhatsApp</a>
-    </div>
-  </section>
-
 </main>
 
 
-<footer class="foot">
-  <div class="wrap foot__in">
-    <span class="foot__logo">Closer</span>
-    <p class="foot__d">Gorriti 4735, Palermo Soho · Lun a sáb de 10 a 19 · 11 2714-9770</p>
-    <p class="foot__c">© <span id="anio">2026</span> Closer Peluquería</p>
+<!-- ============================================================
+     CIERRE + PIE — un solo bloque oscuro al final. Acá aparece el
+     símbolo (la C con la tijera), una sola vez en toda la página.
+     ============================================================ -->
+<footer class="pie">
+  <div class="ancho pie__in">
+
+    <div class="cierre">
+      <p class="cierre__t">Tu próximo corte<br><em>empieza con un mensaje.</em></p>
+      <a class="boton boton--claro boton--grande"
+         href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+         target="_blank" rel="noopener">Reservar turno por WhatsApp</a>
+    </div>
+
+    <div class="pie__abajo">
+      <!-- El símbolo está redibujado en vectores a partir de la imagen del
+           cliente. Si aparece el archivo original, reemplazá logo.svg y listo. -->
+      <img class="pie__logo" src="assets/img/logo.svg" alt="" width="150" height="90">
+
+      <div class="pie__datos">
+        <p><strong>Closer Peluquería</strong> · Gorriti 4735, Palermo Soho, CABA</p>
+        <p>Lun, mar, mié y vie de 10:00 a 19:30 · Jue y sáb de 10:00 a 17:00 · Domingo cerrado</p>
+        <p>
+          <a href="tel:+5491127149770">11 2714-9770</a> ·
+          <a href="https://instagram.com/closer_peluqueria" target="_blank" rel="noopener">@closer_peluqueria</a>
+        </p>
+      </div>
+
+      <p class="pie__copy">© <span id="anio">2026</span> Closer Peluquería</p>
+    </div>
+
   </div>
 </footer>
 
 
-<!-- Barra fija de mobile: aparece cuando el hero sale de pantalla -->
+<!-- Barra fija de mobile: aparece cuando el inicio sale de pantalla -->
 <a class="barra"
    href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
-   target="_blank" rel="noopener" id="barra">Pedir turno por WhatsApp</a>
+   target="_blank" rel="noopener" id="barra">Reservar turno por WhatsApp</a>
 
 <script src="assets/script.js"></script>
 </body>

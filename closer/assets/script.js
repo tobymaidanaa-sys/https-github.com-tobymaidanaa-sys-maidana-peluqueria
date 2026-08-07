@@ -1,44 +1,45 @@
-/* ===========================================================
-   Closer Peluquería — el JS mínimo que necesita la página.
-   Hace tres cosas y nada más:
-     1. cambia el header de transparente a fondo claro al scrollear
-     2. muestra la barra fija de mobile cuando el hero sale de pantalla
-     3. escribe el año en el pie
-   El gesto animado del hero es CSS puro: no está acá.
-   =========================================================== */
+/* ============================================================
+   CLOSER PELUQUERÍA — lo poco que se mueve.
+
+   La página es HTML y CSS. Este archivo hace tres cosas y nada más:
+   marcar la cabecera cuando se scrollea, mostrar la barra de turno en
+   celulares una vez que pasa el inicio, y poner el año en el pie.
+
+   El gesto del inicio (las luces del espejo encendiéndose) es CSS puro:
+   no depende de este archivo.
+   ============================================================ */
 (function () {
-  'use strict';
+  "use strict";
 
-  /* --- 1. Header --------------------------------------------------- */
-  var head = document.getElementById('head');
+  var cabecera = document.getElementById("cabecera");
+  var barra    = document.getElementById("barra");
+  var inicio   = document.getElementById("inicio");
+  var anio     = document.getElementById("anio");
 
-  function marcarHeader() {
-    if (!head) return;
-    head.classList.toggle('is-scrolled', window.scrollY > 40);
+  /* El año del copyright, para no tener que tocarlo cada enero */
+  if (anio) {
+    anio.textContent = new Date().getFullYear();
   }
 
-  marcarHeader();
-  window.addEventListener('scroll', marcarHeader, { passive: true });
-
-
-  /* --- 2. Barra fija de mobile -------------------------------------
-     Aparece recién cuando el hero deja de verse, para no pisar el
-     botón que ya está arriba. Si el navegador no soporta
-     IntersectionObserver, la barra queda visible desde el arranque. */
-  var barra = document.getElementById('barra');
-  var hero  = document.getElementById('inicio');
-
-  if (barra && hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entradas) {
-      barra.classList.toggle('is-on', !entradas[0].isIntersecting);
-    }, { threshold: 0 }).observe(hero);
-  } else if (barra) {
-    barra.classList.add('is-on');
+  /* La cabecera se despega del fondo apenas se scrollea */
+  if (cabecera) {
+    var marcarCabecera = function () {
+      cabecera.classList.toggle("esta-abajo", window.scrollY > 12);
+    };
+    marcarCabecera();
+    window.addEventListener("scroll", marcarCabecera, { passive: true });
   }
 
-
-  /* --- 3. Año del pie ----------------------------------------------- */
-  var anio = document.getElementById('anio');
-  if (anio) anio.textContent = new Date().getFullYear();
-
+  /* La barra de turno aparece cuando el inicio sale de pantalla.
+     Con IntersectionObserver, que no cuesta nada; si el navegador no
+     lo tiene, la barra queda visible y listo. */
+  if (barra && inicio) {
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entradas) {
+        barra.classList.toggle("se-ve", !entradas[0].isIntersecting);
+      }, { rootMargin: "-70px 0px 0px 0px" }).observe(inicio);
+    } else {
+      barra.classList.add("se-ve");
+    }
+  }
 })();
