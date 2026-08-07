@@ -94,7 +94,7 @@ Están todas las fotos reales del salón. Para cambiar alguna, guardá la nueva
 Ojo con esto: las fotos se movieron de lugar y **conservaron su nombre**.
 `hero.jpg` y `nosotros.jpg` hoy están en la galería, y las que ocupan el
 espejo del inicio y la sección "Nosotros" se llaman `trabajo-3.jpg` y
-`trabajo-2.jpg`. Guiate por la tabla de abajo, no por el nombre.
+`trabajo-6.jpg`. Guiate por la tabla de abajo, no por el nombre.
 
 ### El orden de la galería no es alfabético
 
@@ -104,7 +104,7 @@ y columna:
 | | A (izq.) | B (centro) | C (der.) |
 |---|---|---|---|
 | **Fila 1** | `trabajo-1` | `nosotros` | `hero` |
-| **Fila 2** | `trabajo-5` | `trabajo-4` | `trabajo-6` |
+| **Fila 2** | `trabajo-5` | `trabajo-4` | `trabajo-2` |
 | **Fila 3** | `trabajo-7` | `trabajo-9` | `trabajo-8` |
 
 Vale de 980px para arriba. Abajo de eso la grilla pasa a dos columnas y el
@@ -115,11 +115,11 @@ orden es simplemente el del HTML.
 | `hero.jpg` | Galería (1C) | Peinado de cola alta, de perfil |
 | `nosotros.jpg` | Galería (1B) | Corte largo en capas, castaño oscuro |
 | `trabajo-1.jpg` | Galería (1A) | Balayage rubio sobre pelo largo |
-| `trabajo-2.jpg` | Sección "Nosotros", a la derecha | Iluminación con contorno, ondas rubias |
+| `trabajo-2.jpg` | Galería (2C) | Iluminación con contorno, ondas rubias |
 | `trabajo-3.jpg` | Adentro del espejo del inicio | Color cobrizo sobre rulos |
 | `trabajo-4.jpg` | Galería (2B) | Mechas con contorno, castaño oscuro |
 | `trabajo-5.jpg` | Galería (2A) | Iluminación con contorno, rubio claro |
-| `trabajo-6.jpg` | Galería (2C) | Corte mullet corto |
+| `trabajo-6.jpg` | Sección "Nosotros", a la derecha | Corte mullet corto |
 | `trabajo-7.jpg` | Galería (3A) | Corte largo en capas con reflejos |
 | `trabajo-8.jpg` | Galería (3C) | Pelo largo castaño, de espaldas |
 | `trabajo-9.jpg` | Galería (3B) | Corte en media melena con rulos |
