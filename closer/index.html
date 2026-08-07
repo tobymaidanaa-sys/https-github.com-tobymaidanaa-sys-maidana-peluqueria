@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Closer Peluquería — Corte y color en Buenos Aires</title>
+<meta name="description" content="Peluquería en Buenos Aires. Corte, color, mechas y tratamientos con turno reservado y un cliente por vez. Pedí tu turno por WhatsApp.">
+
+<!-- Open Graph: lo que se ve cuando alguien comparte el link -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Closer Peluquería — Corte y color en Buenos Aires">
+<meta property="og:description" content="Un turno por vez, sin apuro. Corte, color, mechas y tratamientos. Pedí tu turno por WhatsApp.">
+<meta property="og:locale" content="es_AR">
+<!-- TODO: subir una foto real de 1200x630 px como assets/img/og.jpg y descomentar -->
+<!-- <meta property="og:image" content="assets/img/og.jpg"> -->
+
+<!-- TODO: favicon propio. Mientras tanto, la C del logotipo en SVG. -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B0B0B'/><text x='50' y='72' font-family='Georgia,serif' font-size='68' fill='%23EDEBE7' text-anchor='middle'>C</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+<!-- Para quien navega con teclado: primer tab, salta el menú -->
+<a class="skip" href="#contenido">Ir al contenido</a>
+
+<!-- ============================================================
+     HEADER — fijo. Arranca transparente sobre el hero negro y
+     pasa a fondo claro al scrollear (clase .is-scrolled desde el JS).
+     ============================================================ -->
+<header class="head" id="head">
+  <div class="wrap head__in">
+    <a class="head__logo" href="#inicio">Closer</a>
+
+    <nav class="head__nav" aria-label="Secciones">
+      <a href="#trabajo">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#salon">El salón</a>
+      <a href="#turnos">Turnos</a>
+    </nav>
+
+    <a class="btn btn--sm head__cta"
+       href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+       target="_blank" rel="noopener">Pedir turno</a>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ============================================================
+       HERO — la tesis de la página. Acá va el único gesto animado:
+       "acercarse". El nombre entra con las letras separadas y se
+       juntan, y la foto se aproxima. Mismo timing, un solo momento.
+       ============================================================ -->
+  <section class="hero section--ink" id="inicio">
+    <div class="wrap">
+
+      <p class="kicker hero__kicker">Peluquería · Buenos Aires</p>
+
+      <div class="hero__titulo">
+        <h1 class="hero__h1">Closer</h1>
+      </div>
+
+      <div class="hero__pie">
+        <p class="hero__bajada">
+          Trabajamos de cerca. Un turno por vez, sin apuro,
+          mirando el pelo que tenés antes de decidir el que vas a llevar.
+        </p>
+        <div class="hero__acc">
+          <a class="btn"
+             href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+             target="_blank" rel="noopener">Pedir turno por WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+
+    <figure class="hero__foto">
+      <img src="assets/img/hero.svg" width="1800" height="1000"
+           alt="Interior del salón de Closer Peluquería durante un corte">
+    </figure>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICIOS — lista editorial numerada. Los precios están
+       pendientes: ver los TODO de abajo.
+       ============================================================ -->
+  <section class="section" id="trabajo">
+    <div class="wrap">
+      <div class="cab">
+        <p class="kicker">01 — Servicios</p>
+        <h2 class="h2">El trabajo</h2>
+      </div>
+
+      <ul class="serv">
+        <li class="serv__i">
+          <span class="serv__n">01</span>
+          <div class="serv__txt">
+            <h3 class="serv__t">Corte</h3>
+            <p>Lavado, corte y secado. Se define en el espejo, con vos, antes de la primera tijera.</p>
+          </div>
+          <!-- TODO: precio. Reemplazá "Consultar" por el valor, ej: $ 18.000 -->
+          <span class="serv__p">Consultar</span>
+        </li>
+
+        <li class="serv__i">
+          <span class="serv__n">02</span>
+          <div class="serv__txt">
+            <h3 class="serv__t">Color</h3>
+            <p>Coloración completa o retoque de raíz. Elegimos el tono contra tu piel, no contra un catálogo.</p>
+          </div>
+          <!-- TODO: precio -->
+          <span class="serv__p">Consultar</span>
+        </li>
+
+        <li class="serv__i">
+          <span class="serv__n">03</span>
+          <div class="serv__txt">
+            <h3 class="serv__t">Mechas y balayage</h3>
+            <p>Iluminación hecha a mano, mecha por mecha. Crece parejo y no te obliga a volver en un mes.</p>
+          </div>
+          <!-- TODO: precio -->
+          <span class="serv__p">Consultar</span>
+        </li>
+
+        <li class="serv__i">
+          <span class="serv__n">04</span>
+          <div class="serv__txt">
+            <h3 class="serv__t">Tratamientos</h3>
+            <p>Nutrición, reconstrucción y botox capilar para pelo trabajado. Diagnóstico antes de aplicar.</p>
+          </div>
+          <!-- TODO: precio -->
+          <span class="serv__p">Consultar</span>
+        </li>
+
+        <li class="serv__i">
+          <span class="serv__n">05</span>
+          <div class="serv__txt">
+            <h3 class="serv__t">Brushing y peinado</h3>
+            <p>Para un evento o para el día a día. Si venís con la foto de lo que querés, mejor.</p>
+          </div>
+          <!-- TODO: precio -->
+          <span class="serv__p">Consultar</span>
+        </li>
+
+        <li class="serv__i">
+          <span class="serv__n">06</span>
+          <div class="serv__txt">
+            <h3 class="serv__t">Alisado</h3>
+            <p>Alisado progresivo sin formol. Dura entre tres y cinco meses según el largo.</p>
+          </div>
+          <!-- TODO: precio -->
+          <span class="serv__p">Consultar</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TRABAJOS — galería. Cambiá los .svg por fotos reales:
+       ver la tabla del README.
+       ============================================================ -->
+  <section class="section section--ink" id="trabajos">
+    <div class="wrap">
+      <div class="cab">
+        <p class="kicker">02 — Galería</p>
+        <h2 class="h2">Trabajos</h2>
+        <p class="cab__nota">Todo lo que ves acá salió de este salón. <!-- TODO: si querés, sumá el @ de cada clienta o el servicio de cada foto --></p>
+      </div>
+
+      <div class="galeria">
+        <figure class="galeria__i galeria__i--alta">
+          <img src="assets/img/trabajo-1.svg" width="900" height="1350" loading="lazy"
+               alt="Corte con capas largas hecho en Closer">
+        </figure>
+        <figure class="galeria__i">
+          <img src="assets/img/trabajo-2.svg" width="900" height="1200" loading="lazy"
+               alt="Balayage sobre base castaña hecho en Closer">
+        </figure>
+        <figure class="galeria__i">
+          <img src="assets/img/trabajo-3.svg" width="900" height="1200" loading="lazy"
+               alt="Color uniforme en tono cobre hecho en Closer">
+        </figure>
+        <figure class="galeria__i">
+          <img src="assets/img/trabajo-4.svg" width="900" height="1200" loading="lazy"
+               alt="Brushing con ondas suaves hecho en Closer">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       EL SALÓN
+       ============================================================ -->
+  <section class="section" id="salon">
+    <div class="wrap salon">
+      <figure class="salon__foto">
+        <img src="assets/img/salon.svg" width="1400" height="1000" loading="lazy"
+             alt="El salón de Closer Peluquería">
+      </figure>
+
+      <div class="salon__txt">
+        <p class="kicker">03 — El salón</p>
+        <h2 class="h2">Un sillón, una persona</h2>
+        <p>
+          Closer trabaja con turno reservado y sin superponer clientas.
+          Nadie espera con el color puesto mientras atienden a otra.
+        </p>
+        <p>
+          Eso también quiere decir que el turno es tuyo: si querés cambiar
+          algo a mitad de camino, hay tiempo para pensarlo.
+        </p>
+
+        <dl class="datos">
+          <div>
+            <dt>Dirección</dt>
+            <!-- TODO: dirección real del salón -->
+            <dd>A confirmar, Buenos Aires</dd>
+          </div>
+          <div>
+            <dt>Horarios</dt>
+            <!-- TODO: días y horarios de atención -->
+            <dd>A confirmar</dd>
+          </div>
+        </dl>
+
+        <!-- TODO: cuando tengas la dirección, pegá acá el iframe de Google Maps
+             (en Maps: Compartir → Insertar un mapa → copiar el iframe). -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TURNOS — las tres vías de contacto.
+       ============================================================ -->
+  <section class="section section--ink" id="turnos">
+    <div class="wrap">
+      <div class="cab">
+        <p class="kicker">04 — Turnos</p>
+        <h2 class="h2">Cómo pedir turno</h2>
+      </div>
+
+      <div class="vias">
+        <a class="via"
+           href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+           target="_blank" rel="noopener">
+          <span class="via__k">La forma más rápida</span>
+          <span class="via__t">WhatsApp</span>
+          <span class="via__d">11 2714-9770</span>
+        </a>
+
+        <a class="via" href="tel:+5491127149770">
+          <span class="via__k">Si preferís hablar</span>
+          <span class="via__t">Teléfono</span>
+          <span class="via__d">11 2714-9770</span>
+        </a>
+
+        <!-- TODO: reemplazá "closerpeluqueria" por el usuario real de Instagram (2 lugares: acá y en el footer) -->
+        <a class="via" href="https://instagram.com/closerpeluqueria" target="_blank" rel="noopener">
+          <span class="via__k">Para ver más trabajos</span>
+          <span class="via__t">Instagram</span>
+          <span class="via__d">@closerpeluqueria</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CIERRE — el botón otra vez, sin nada alrededor.
+       ============================================================ -->
+  <section class="cierre">
+    <div class="wrap cierre__in">
+      <p class="cierre__t">Tu próximo corte<br><em>empieza con un mensaje.</em></p>
+      <a class="btn btn--lg"
+         href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+         target="_blank" rel="noopener">Pedir turno por WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span class="foot__logo">Closer</span>
+    <p class="foot__d">Peluquería · Buenos Aires · 11 2714-9770</p>
+    <p class="foot__c">© <span id="anio">2026</span> Closer Peluquería</p>
+  </div>
+</footer>
+
+
+<!-- Barra fija de mobile: aparece cuando el hero sale de pantalla -->
+<a class="barra"
+   href="https://wa.me/5491127149770?text=Hola%20Closer%2C%20quiero%20pedir%20un%20turno"
+   target="_blank" rel="noopener" id="barra">Pedir turno por WhatsApp</a>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

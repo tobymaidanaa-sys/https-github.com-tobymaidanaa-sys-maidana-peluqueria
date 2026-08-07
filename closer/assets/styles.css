@@ -1,0 +1,536 @@
+/* ===========================================================
+   Closer Peluquería — hoja de estilos única.
+   Está ordenada así: variables, base, piezas reutilizables,
+   y después cada sección en el mismo orden que el HTML.
+   =========================================================== */
+
+
+/* -----------------------------------------------------------
+   1. Variables
+   Los dos colores de la marca y las dos tipografías viven acá.
+   Si cambiás algo, cambialo en este bloque y se propaga solo.
+   ----------------------------------------------------------- */
+:root{
+  /* Paleta: negro y blanco, sin acento de color. */
+  --ink:   #0B0B0B;   /* el negro, un punto más suave que #000 */
+  --paper: #EDEBE7;   /* el blanco, cálido, tipo papel de revista */
+  --gris:  #78756F;   /* texto secundario sobre papel */
+  --gris-claro: #9C9892;  /* texto secundario sobre negro */
+  --linea:      rgba(11,11,11,.16);
+  --linea-ink:  rgba(237,235,231,.20);
+
+  /* Tipografías */
+  --display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --body:    'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Medidas y ritmo */
+  --ancho: 1280px;
+  --borde: 24px;              /* aire contra los bordes de la pantalla */
+  --alto-head: 72px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+@media (max-width:640px){
+  :root{ --borde:18px; --alto-head:60px; }
+}
+
+
+/* -----------------------------------------------------------
+   2. Base
+   ----------------------------------------------------------- */
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+  overflow-x:hidden;
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(1rem, .96rem + .22vw, 1.09rem);
+  line-height:1.62;
+  font-weight:400;
+  overflow-x:hidden;          /* el gesto del hero desborda un instante */
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ display:block; max-width:100%; height:auto; }
+
+/* Todas las fotos se ven en blanco y negro por CSS.
+   O sea: el cliente las sube a color y la página las neutraliza sola. */
+img{ filter:grayscale(1); }
+
+h1,h2,h3{ margin:0; font-weight:400; }
+p{ margin:0 0 1.1em; }
+ul{ margin:0; padding:0; list-style:none; }
+a{ color:inherit; }
+
+/* Foco visible para quien navega con teclado */
+:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:4px;
+  border-radius:2px;
+}
+
+.wrap{
+  width:100%;
+  max-width:var(--ancho);
+  margin-inline:auto;
+  padding-inline:var(--borde);
+}
+
+/* Link para saltar el menú. Sólo aparece al tabular. */
+.skip{
+  position:fixed; top:8px; left:8px; z-index:200;
+  transform:translateY(-200%);
+  background:var(--ink); color:var(--paper);
+  padding:12px 18px; text-decoration:none;
+  font-size:.85rem; letter-spacing:.04em;
+}
+.skip:focus{ transform:translateY(0); }
+
+
+/* -----------------------------------------------------------
+   3. Piezas reutilizables
+   ----------------------------------------------------------- */
+
+/* Espaciado de secciones: se maneja SÓLO desde .section.
+   Las variantes de color (.section--ink) no tocan el padding. */
+.section{
+  padding-block:clamp(4.5rem, 11vw, 9rem);
+  scroll-margin-top:var(--alto-head);   /* que el header fijo no tape el título */
+}
+.section--ink{
+  background:var(--ink);
+  color:var(--paper);
+}
+.section--ink .kicker{ color:var(--gris-claro); }
+
+/* Volanta: el textito chico en mayúsculas sobre cada título */
+.kicker{
+  margin:0 0 1.4rem;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--gris);
+}
+
+/* Título de sección */
+.h2{
+  font-family:var(--display);
+  font-size:clamp(2.5rem, 7vw, 5rem);
+  line-height:.98;
+  letter-spacing:-.015em;
+}
+
+.cab{ max-width:22ch; margin-bottom:clamp(2.5rem, 6vw, 4.5rem); }
+.cab__nota{
+  margin-top:1.4rem;
+  max-width:38ch;
+  font-size:.95rem;
+  color:var(--gris-claro);
+}
+
+/* Botón de contacto. Es el elemento más importante de la página:
+   por eso es el único bloque sólido invertido que hay. */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6em;
+  padding:1.05em 2.1em;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:.86rem;
+  font-weight:500;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border:1px solid var(--paper);
+  transition:background .35s var(--ease), color .35s var(--ease);
+}
+.btn:hover{ background:transparent; color:var(--paper); }
+
+/* Sobre fondo claro se da vuelta */
+.section:not(.section--ink) .btn,
+.cierre .btn{
+  background:var(--ink); color:var(--paper); border-color:var(--ink);
+}
+.section:not(.section--ink) .btn:hover,
+.cierre .btn:hover{ background:transparent; color:var(--ink); }
+
+.btn--sm{ padding:.75em 1.5em; font-size:.74rem; }
+.btn--lg{ padding:1.25em 3em; font-size:.95rem; }
+
+
+/* -----------------------------------------------------------
+   4. Header
+   ----------------------------------------------------------- */
+.head{
+  position:fixed; inset:0 0 auto 0; z-index:100;
+  height:var(--alto-head);
+  display:flex; align-items:center;
+  color:var(--paper);
+  transition:background .4s var(--ease), color .4s var(--ease),
+             border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.head.is-scrolled{
+  background:var(--paper);
+  color:var(--ink);
+  border-bottom-color:var(--linea);
+}
+
+.head__in{ display:flex; align-items:center; gap:2rem; }
+
+.head__logo{
+  font-family:var(--display);
+  font-size:1.55rem;
+  letter-spacing:.02em;
+  text-decoration:none;
+  margin-right:auto;
+}
+
+.head__nav{ display:flex; gap:1.9rem; }
+.head__nav a{
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  opacity:.72;
+  transition:opacity .3s var(--ease);
+}
+.head__nav a:hover{ opacity:1; }
+
+/* Botón del header: hereda el color del header, no el de la sección */
+.head__cta{ background:transparent; color:inherit; border-color:currentColor; }
+.head__cta:hover{ background:currentColor; color:var(--ink); }
+.head.is-scrolled .head__cta:hover{ color:var(--paper); }
+
+@media (max-width:860px){
+  .head__nav{ display:none; }   /* en mobile queda sólo el botón */
+}
+@media (max-width:420px){
+  .head__cta{ display:none; }   /* abajo de 420px manda la barra fija */
+}
+
+
+/* -----------------------------------------------------------
+   5. Hero — acá vive el único gesto animado de la página.
+   Se llama "acercarse": el nombre entra con las letras separadas
+   y se juntan, mientras la foto se aproxima. Un solo momento,
+   un solo easing. Todo lo demás en la página se queda quieto.
+   ----------------------------------------------------------- */
+.hero{
+  padding-top:calc(var(--alto-head) + clamp(3rem, 9vw, 6.5rem));
+  padding-bottom:0;
+}
+
+.hero__kicker{ color:var(--gris-claro); }
+
+/* El estado inicial del gesto desborda a la derecha: lo absorbe
+   el overflow-x del html/body, así no recorta la altura de las letras. */
+.hero__titulo{ position:relative; }
+
+.hero__h1{
+  font-family:var(--display);
+  font-size:clamp(4.2rem, 20vw, 15rem);
+  line-height:.85;
+  letter-spacing:.012em;
+  margin:0;
+  white-space:nowrap;
+  animation:acercar 1.5s var(--ease) both;
+}
+
+@keyframes acercar{
+  from{ letter-spacing:.36em; opacity:0; }
+  to  { letter-spacing:.012em; opacity:1; }
+}
+
+.hero__pie{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:2.5rem;
+  align-items:end;
+  margin-top:clamp(2.2rem, 5vw, 3.5rem);
+  padding-bottom:clamp(3rem, 7vw, 5rem);
+}
+
+.hero__bajada{
+  margin:0;
+  max-width:34ch;
+  font-size:clamp(1.02rem, .95rem + .4vw, 1.25rem);
+  color:var(--gris-claro);
+}
+
+.hero__acc{
+  display:flex; flex-wrap:wrap; align-items:center;
+  gap:1.6rem;
+  justify-content:flex-end;
+}
+
+.hero__foto{
+  margin:0;
+  overflow:hidden;
+}
+.hero__foto img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  animation:aproximar 1.8s var(--ease) both;
+}
+
+@keyframes aproximar{
+  from{ transform:scale(1.14); opacity:.25; }
+  to  { transform:scale(1);    opacity:1;   }
+}
+
+@media (max-width:760px){
+  .hero__pie{ grid-template-columns:1fr; gap:2rem; }
+  .hero__acc{ justify-content:flex-start; }
+  .hero__foto img{ aspect-ratio:4/3; }
+}
+
+
+/* -----------------------------------------------------------
+   6. Servicios
+   ----------------------------------------------------------- */
+.serv{ border-top:1px solid var(--linea); }
+
+.serv__i{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  gap:clamp(1.2rem, 4vw, 3.5rem);
+  align-items:baseline;
+  padding-block:clamp(1.8rem, 3.5vw, 2.6rem);
+  border-bottom:1px solid var(--linea);
+}
+
+.serv__n{
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.18em;
+  color:var(--gris);
+}
+
+.serv__t{
+  font-family:var(--display);
+  font-size:clamp(1.7rem, 3.4vw, 2.6rem);
+  line-height:1.05;
+  margin-bottom:.35rem;
+}
+
+.serv__txt p{
+  margin:0;
+  max-width:46ch;
+  font-size:.97rem;
+  color:var(--gris);
+}
+
+.serv__p{
+  font-size:.8rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  color:var(--gris);
+}
+
+@media (max-width:640px){
+  .serv__i{
+    grid-template-columns:auto minmax(0,1fr);
+    row-gap:.7rem;
+  }
+  .serv__p{ grid-column:2; }
+}
+
+
+/* -----------------------------------------------------------
+   7. Galería
+   ----------------------------------------------------------- */
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:clamp(.7rem, 1.6vw, 1.4rem);
+  align-items:start;
+}
+.galeria__i{ margin:0; overflow:hidden; }
+.galeria__i img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+}
+/* La primera se estira: la asimetría es lo que evita que parezca un catálogo */
+.galeria__i--alta{ margin-top:clamp(1.5rem, 4vw, 3.5rem); }
+.galeria__i--alta img{ aspect-ratio:2/3; }
+
+@media (max-width:860px){
+  .galeria{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .galeria__i--alta{ margin-top:0; }
+  .galeria__i--alta img{ aspect-ratio:3/4; }
+}
+
+
+/* -----------------------------------------------------------
+   8. El salón
+   ----------------------------------------------------------- */
+.salon{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(2rem, 6vw, 5rem);
+  align-items:center;
+}
+.salon__foto{ margin:0; overflow:hidden; }
+.salon__foto img{ width:100%; aspect-ratio:7/5; object-fit:cover; }
+
+.salon__txt p{ max-width:44ch; color:var(--gris); }
+.salon__txt .h2{ margin-bottom:1.6rem; color:var(--ink); }
+
+.datos{
+  display:flex; flex-wrap:wrap; gap:2.5rem;
+  margin:2.4rem 0 0;
+  padding-top:1.8rem;
+  border-top:1px solid var(--linea);
+}
+.datos dt{
+  font-size:.7rem; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gris);
+  margin-bottom:.45rem;
+}
+.datos dd{ margin:0; font-size:1rem; }
+
+@media (max-width:860px){
+  .salon{ grid-template-columns:1fr; }
+}
+
+
+/* -----------------------------------------------------------
+   9. Turnos
+   ----------------------------------------------------------- */
+.vias{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:1px;
+  background:var(--linea-ink);
+  border-block:1px solid var(--linea-ink);
+}
+.via{
+  display:flex; flex-direction:column; gap:.5rem;
+  padding:clamp(1.8rem, 4vw, 3rem) clamp(1.2rem, 3vw, 2.2rem);
+  background:var(--ink);
+  text-decoration:none;
+  transition:background .35s var(--ease), color .35s var(--ease);
+}
+.via:hover{ background:var(--paper); color:var(--ink); }
+
+.via__k{
+  font-size:.7rem; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gris-claro);
+  transition:color .35s var(--ease);
+}
+.via:hover .via__k{ color:var(--gris); }
+
+.via__t{
+  font-family:var(--display);
+  font-size:clamp(1.9rem, 4vw, 2.9rem);
+  line-height:1.05;
+}
+.via__d{ font-size:.95rem; opacity:.8; }
+
+@media (max-width:760px){
+  .vias{ grid-template-columns:1fr; }
+}
+
+
+/* -----------------------------------------------------------
+   10. Cierre
+   ----------------------------------------------------------- */
+.cierre{ padding-block:clamp(5rem, 13vw, 10rem); }
+.cierre__in{
+  display:flex; flex-direction:column; align-items:center;
+  text-align:center; gap:clamp(2rem, 5vw, 3.2rem);
+}
+.cierre__t{
+  margin:0;
+  font-family:var(--display);
+  font-size:clamp(2.4rem, 7vw, 5.2rem);
+  line-height:1.02;
+  letter-spacing:-.015em;
+}
+.cierre__t em{ font-style:italic; color:var(--gris); }
+
+
+/* -----------------------------------------------------------
+   11. Footer
+   ----------------------------------------------------------- */
+.foot{
+  background:var(--ink);
+  color:var(--paper);
+  padding-block:2.6rem;
+}
+.foot__in{
+  display:flex; flex-wrap:wrap; align-items:baseline;
+  gap:1rem 2rem;
+}
+.foot__logo{
+  font-family:var(--display);
+  font-size:1.5rem;
+  margin-right:auto;
+}
+.foot__d,.foot__c{
+  margin:0;
+  font-size:.82rem;
+  letter-spacing:.05em;
+  color:var(--gris-claro);
+}
+
+
+/* -----------------------------------------------------------
+   12. Barra fija de mobile
+   Aparece recién cuando el hero salió de pantalla (clase .is-on
+   desde el JS), para no tapar el botón que ya está en el hero.
+   ----------------------------------------------------------- */
+.barra{
+  position:fixed; inset:auto 0 0 0; z-index:90;
+  display:none;
+  padding:1.05rem;
+  background:var(--ink);
+  color:var(--paper);
+  text-align:center;
+  text-decoration:none;
+  font-size:.82rem; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase;
+  transform:translateY(100%);
+  transition:transform .45s var(--ease);
+}
+.barra.is-on{ transform:translateY(0); }
+
+@media (max-width:760px){
+  .barra{ display:block; }
+  /* que la barra no tape el final del footer */
+  .foot{ padding-bottom:5.5rem; }
+}
+
+
+/* -----------------------------------------------------------
+   13. Movimiento reducido
+   Si el sistema pide menos animación, no se mueve nada.
+   ----------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .hero__h1{ letter-spacing:.012em; opacity:1; }
+  .hero__foto img{ transform:none; opacity:1; }
+  .barra.is-on{ transform:translateY(0); }
+}

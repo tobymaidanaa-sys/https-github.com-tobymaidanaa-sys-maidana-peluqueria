@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1350" width="900" height="1350" role="img" aria-label="Placeholder">
+  <rect width="900" height="1350" fill="#d2d0cd"/>
+  <g stroke="#8d8d8d" stroke-width="2" opacity=".55">
+    <line x1="0" y1="0" x2="900" y2="1350"/>
+    <line x1="900" y1="0" x2="0" y2="1350"/>
+    <rect x="1" y="1" width="898" height="1348" fill="none"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a4a4a" text-anchor="middle">
+    <text x="450" y="669" font-size="30" letter-spacing="6">TRABAJO 1</text>
+    <text x="450" y="709" font-size="22" letter-spacing="3" fill="#6f6f6f">900 x 1350</text>
+  </g>
+</svg>
