@@ -58,11 +58,11 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
+/* Las fotos van a color: en una peluquería el color del pelo es el trabajo
+   que se vende, así que es lo único que aporta color a la página. Todo el
+   resto —fondos, tipografía, botones— sigue en blanco y negro, y ese
+   contraste es lo que hace que las fotos se lleven toda la atención. */
 img{ display:block; max-width:100%; height:auto; }
-
-/* Todas las fotos se ven en blanco y negro por CSS.
-   O sea: el cliente las sube a color y la página las neutraliza sola. */
-img{ filter:grayscale(1); }
 
 h1,h2,h3{ margin:0; font-weight:400; }
 p{ margin:0 0 1.1em; }
