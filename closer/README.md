@@ -89,30 +89,40 @@ Para agregar o sacar un servicio, se copia o se borra un `<li>` entero.
 Están todas las fotos reales del salón. Para cambiar alguna, guardá la nueva
 **con el mismo nombre de archivo** y no hay que tocar el HTML.
 
+### El nombre del archivo ya no dice dónde aparece
+
+Ojo con esto: las fotos se movieron de lugar y **conservaron su nombre**.
+`hero.jpg` y `nosotros.jpg` hoy están en la galería, y las que ocupan el
+espejo del inicio y la sección "Nosotros" se llaman `trabajo-3.jpg` y
+`trabajo-2.jpg`. Guiate por la tabla de abajo, no por el nombre.
+
 ### El orden de la galería no es alfabético
 
-En "Hecho en Closer" la **columna del medio de cada fila** lleva las fotos de
-**fondo liso y claro** (hoy `trabajo-3`, `trabajo-4` y `trabajo-6`), y las de
-ambiente del salón van a los costados. Eso arma una columna central limpia que
-sostiene la grilla. El orden en el HTML es `1, 3, 2 · 5, 4, 8 · 7, 6, 9`.
+Lo definió el cliente foto por foto. Éste es el mapa de la grilla, por fila
+y columna:
 
-Si sumás o cambiás fotos, respetá la regla: **fondo liso al medio, ambiente a
-los lados**. Vale sólo de 980px para arriba; abajo de eso la grilla pasa a dos
-columnas y el orden es el del HTML.
+| | A (izq.) | B (centro) | C (der.) |
+|---|---|---|---|
+| **Fila 1** | `trabajo-1` | `nosotros` | `hero` |
+| **Fila 2** | `trabajo-5` | `trabajo-4` | `trabajo-6` |
+| **Fila 3** | `trabajo-7` | `trabajo-9` | `trabajo-8` |
+
+Vale de 980px para arriba. Abajo de eso la grilla pasa a dos columnas y el
+orden es simplemente el del HTML.
 
 | Archivo | Dónde aparece | Qué muestra hoy |
 |---|---|---|
-| `hero.jpg` | Adentro del espejo del inicio | Peinado de cola alta, de perfil |
-| `nosotros.jpg` | Sección "Nosotros", a la derecha | Corte largo en capas, castaño oscuro |
-| `trabajo-1.jpg` | Galería | Balayage rubio sobre pelo largo |
-| `trabajo-2.jpg` | Galería | Iluminación con contorno, ondas rubias |
-| `trabajo-3.jpg` | Galería | Color cobrizo sobre rulos |
-| `trabajo-4.jpg` | Galería | Mechas con contorno, castaño oscuro |
-| `trabajo-5.jpg` | Galería | Iluminación con contorno, rubio claro |
-| `trabajo-6.jpg` | Galería | Corte mullet corto |
-| `trabajo-7.jpg` | Galería | Corte largo en capas con reflejos |
-| `trabajo-8.jpg` | Galería | Pelo largo castaño, de espaldas |
-| `trabajo-9.jpg` | Galería | Corte en media melena con rulos |
+| `hero.jpg` | Galería (1C) | Peinado de cola alta, de perfil |
+| `nosotros.jpg` | Galería (1B) | Corte largo en capas, castaño oscuro |
+| `trabajo-1.jpg` | Galería (1A) | Balayage rubio sobre pelo largo |
+| `trabajo-2.jpg` | Sección "Nosotros", a la derecha | Iluminación con contorno, ondas rubias |
+| `trabajo-3.jpg` | Adentro del espejo del inicio | Color cobrizo sobre rulos |
+| `trabajo-4.jpg` | Galería (2B) | Mechas con contorno, castaño oscuro |
+| `trabajo-5.jpg` | Galería (2A) | Iluminación con contorno, rubio claro |
+| `trabajo-6.jpg` | Galería (2C) | Corte mullet corto |
+| `trabajo-7.jpg` | Galería (3A) | Corte largo en capas con reflejos |
+| `trabajo-8.jpg` | Galería (3C) | Pelo largo castaño, de espaldas |
+| `trabajo-9.jpg` | Galería (3B) | Corte en media melena con rulos |
 | `salon.jpg` | Sección "Adentro" | El local |
 
 Van todas **verticales**: 900 × 1200 px las de la galería, 1000 × 1333 px las
