@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <rect width="500" height="500" fill="#0B0B0B"/>
+  <g transform="translate(-205, 0)">
+    <mask id="b">
+      <rect x="205" width="700" height="500" fill="#fff"/>
+      <rect x="455" y="150" width="245" height="200" fill="#000"/>
+    </mask>
+    <path d="M 280 250 a 175 175 0 1 0 350 0 a 175 175 0 1 0 -350 0 Z M 379 250 a 106 133 0 1 0 212 0 a 106 133 0 1 0 -212 0 Z" fill-rule="evenodd" fill="#EDEBE7" mask="url(#b)"/>
+  </g>
+</svg>

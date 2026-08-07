@@ -201,7 +201,7 @@ a{ color:inherit; }
    sobre el fondo oscuro del inicio, así que se invierte a blanco; cuando
    el header pasa a fondo claro, vuelve a su negro original. */
 .head__logo-img{
-  height:30px; width:auto;
+  height:42px; width:auto;
   filter:invert(1);
   transition:filter .4s var(--ease);
 }

@@ -15,8 +15,8 @@
 <!-- TODO: subir una foto real de 1200x630 px como assets/img/og.jpg y descomentar -->
 <!-- <meta property="og:image" content="assets/img/og.jpg"> -->
 
-<!-- TODO: favicon propio. Mientras tanto, la C del logotipo en SVG. -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B0B0B'/><text x='50' y='72' font-family='Georgia,serif' font-size='68' fill='%23EDEBE7' text-anchor='middle'>C</text></svg>">
+<!-- Favicon: la C del logo, sin la tijera (a 32 px se vuelve una mancha). -->
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,13 +36,11 @@
      ============================================================ -->
 <header class="head" id="head">
   <div class="wrap head__in">
-    <!-- TODO: el logo (la C con la tijera). Guardalo como assets/img/logo.svg
-         y descomentá la línea del <img>. Tiene que ser SVG con fondo
-         transparente y el dibujo en negro; la página lo invierte sola cuando
-         va sobre el fondo oscuro. Hasta entonces queda el logotipo escrito. -->
+    <!-- El logo está redibujado en vectores a partir de la imagen del cliente.
+         Si aparece el archivo original del diseñador, reemplazá logo.svg y
+         listo: la página no necesita ningún otro cambio. -->
     <a class="head__logo" href="#inicio">
-      <!-- <img class="head__logo-img" src="assets/img/logo.svg" alt="Closer Peluquería"> -->
-      <span class="head__logo-txt">Closer</span>
+      <img class="head__logo-img" src="assets/img/logo.svg" alt="Closer Peluquería">
     </a>
 
     <nav class="head__nav" aria-label="Secciones">

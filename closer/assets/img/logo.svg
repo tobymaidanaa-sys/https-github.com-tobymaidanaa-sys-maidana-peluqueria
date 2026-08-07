@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 62 626 376" role="img" aria-label="Closer Peluquería">
+  <defs>
+    <mask id="c-mask">
+      <rect width="700" height="500" fill="#fff"/>
+      <!-- la boca de la C -->
+      <rect x="455" y="150" width="245" height="200" fill="#000"/>
+      <!-- el aire alrededor de la tijera -->
+      <g fill="#000" stroke="#000" stroke-width="21" stroke-linejoin="round">
+      <path d="M 102.84 188.21 L 217.27 262.85 L 232.73 237.15 L 113.15 171.07 Z"/>
+      <path d="M 217.69 263.1 L 333.81 315.93 L 338.19 308.07 L 232.31 236.9 Z"/>
+      <path d="M 113.15 328.93 L 232.73 262.85 L 217.27 237.15 L 102.84 311.79 Z"/>
+      <path d="M 232.31 263.1 L 338.19 191.93 L 333.81 184.07 L 217.69 236.9 Z"/>
+      <circle cx="72" cy="158" r="42"/>
+      <circle cx="72" cy="342" r="42"/>
+      </g>
+    </mask>
+  </defs>
+
+  <!-- La C -->
+  <path d="M 280 250 a 175 175 0 1 0 350 0 a 175 175 0 1 0 -350 0 Z M 379 250 a 106 133 0 1 0 212 0 a 106 133 0 1 0 -212 0 Z" fill-rule="evenodd" fill="#0B0B0B" mask="url(#c-mask)"/>
+
+  <!-- La tijera, por delante -->
+  <g fill="#0B0B0B">
+    <path d="M 102.84 188.21 L 217.27 262.85 L 232.73 237.15 L 113.15 171.07 Z"/>
+    <path d="M 217.69 263.1 L 333.81 315.93 L 338.19 308.07 L 232.31 236.9 Z"/>
+    <path d="M 113.15 328.93 L 232.73 262.85 L 217.27 237.15 L 102.84 311.79 Z"/>
+    <path d="M 232.31 263.1 L 338.19 191.93 L 333.81 184.07 L 217.69 236.9 Z"/>
+  </g>
+  <g fill="none" stroke="#0B0B0B" stroke-width="19">
+      <circle cx="72" cy="158" r="42"/>
+      <circle cx="72" cy="342" r="42"/>
+  </g>
+</svg>

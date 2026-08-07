@@ -39,18 +39,20 @@ también, porque muestra el local a lo largo.
 
 ### El logo
 
-El logo (la C con la tijera) todavía no está en la página: hoy el header
-muestra el logotipo escrito en la tipografía de títulos. Para ponerlo:
+`assets/img/logo.svg` es el logo (la C con la tijera) **redibujado en
+vectores a ojo, a partir de la imagen que mandó el cliente**. No es el
+archivo original: es una reconstrucción. Si aparece el original del
+diseñador —un `.ai`, `.eps` o `.svg`—, reemplazá ese archivo con el mismo
+nombre y no hay que tocar nada más.
 
-1. Guardalo como `assets/img/logo.svg` — **SVG con fondo transparente y el
-   dibujo en negro**. No sirve un PNG con fondo blanco: arriba del todo el
-   header está sobre el fondo oscuro y se vería un rectángulo blanco.
-2. En el `index.html`, buscá `head__logo-img` y sacale los `<!--` y `-->` a
-   esa línea.
+Lo que sí tiene que cumplir el archivo: **SVG, fondo transparente y el
+dibujo en negro**. Un PNG con fondo blanco no sirve, porque arriba del todo
+el header está sobre el fondo oscuro y se vería un rectángulo blanco. La
+página se encarga de invertirlo: blanco mientras el header está sobre el
+inicio oscuro, negro cuando pasa a fondo claro.
 
-La página lo invierte sola: blanco mientras el header está sobre el fondo
-oscuro del inicio, negro cuando pasa a fondo claro. Con ese mismo archivo se
-puede generar el favicon, que hoy es una "C" provisoria.
+`assets/img/favicon.svg` es el iconito de la pestaña y lleva **sólo la C**,
+sin la tijera: a 32 píxeles la tijera se convierte en una mancha.
 
 Dos cosas importantes:
 
@@ -85,7 +87,7 @@ Están marcados en el `index.html` con el comentario `<!-- TODO -->`, así se
 encuentran rápido:
 
 - [ ] **Fotos reales.** Hoy hay placeholders grises en los 6 lugares.
-- [ ] **El logo** como `assets/img/logo.svg` (ver la sección de arriba).
+- [ ] **El logo original**, si existe: hoy está la reconstrucción vectorial.
 - [ ] **Precios de los servicios.** Los 6 dicen "Consultar".
 - [ ] **Confirmar el texto de "Adentro".** La frase sobre el turno reservado
       la escribimos nosotros, no vino del cliente: hay que chequear que sea
@@ -95,7 +97,6 @@ encuentran rápido:
       (en Google Maps: Compartir → Insertar un mapa → copiar el código).
 - [ ] **Usuario real de Instagram.** Está puesto `@closerpeluqueria` como
       supuesto.
-- [ ] **Favicon** (el iconito de la pestaña): hoy es una "C" provisoria.
 - [ ] **Imagen para compartir** (`og:image`): una foto de 1200 × 630 px
       guardada como `assets/img/og.jpg`, y descomentar la línea del `<head>`.
 
