@@ -86,29 +86,44 @@ Para agregar o sacar un servicio, se copia o se borra un `<li>` entero.
 
 ## Cómo cambiar las fotos
 
-Ya están las fotos reales del salón. Para cambiar alguna, guardá la nueva
+Están todas las fotos reales del salón. Para cambiar alguna, guardá la nueva
 **con el mismo nombre de archivo** y no hay que tocar el HTML.
 
 | Archivo | Dónde aparece | Qué muestra hoy |
 |---|---|---|
-| `assets/img/hero.jpg` | Adentro del espejo del inicio | Ondas largas en castaño con reflejos |
-| `assets/img/trabajo-1.jpg` | Galería, la primera (la más alta) | Peinado de ondas rubias |
-| `assets/img/trabajo-2.jpg` | Galería | Corte mullet oscuro |
-| `assets/img/trabajo-3.jpg` | Galería | Color cobrizo con rulos |
-| `assets/img/trabajo-4.jpg` | Galería | Color y mechas rubias |
-| `assets/img/trabajo-5.jpg` | Galería | Color castaño con reflejos |
-| `assets/img/salon.jpg` | Sección "Adentro" | El local |
+| `hero.jpg` | Adentro del espejo del inicio | Peinado de cola alta, de perfil |
+| `nosotros.jpg` | Sección "Nosotros", a la derecha | Corte largo en capas, castaño oscuro |
+| `servicios.jpg` | Cierra la columna derecha de la carta | Iluminación cálida, de espaldas |
+| `trabajo-1.jpg` | Galería | Balayage rubio sobre pelo largo |
+| `trabajo-2.jpg` | Galería | Iluminación con contorno, ondas rubias |
+| `trabajo-3.jpg` | Galería | Color cobrizo sobre rulos |
+| `trabajo-4.jpg` | Galería | Mechas con contorno, castaño oscuro |
+| `trabajo-5.jpg` | Galería | Iluminación con contorno, rubio claro |
+| `trabajo-6.jpg` | Galería | Corte mullet corto |
+| `trabajo-7.jpg` | Galería | Corte largo en capas con reflejos |
+| `trabajo-8.jpg` | Galería | Pelo largo castaño, de espaldas |
+| `trabajo-9.jpg` | Galería | Corte en media melena con rulos |
+| `salon.jpg` | Sección "Adentro" | El local |
 
-Van todas **verticales**, cerca de 960 × 1280 px. No hace falta recortarlas a
-medida: la página las encuadra sola con `object-fit`. Si una queda mal
-encuadrada, se ajusta el `object-position` de esa sección en el `styles.css`.
+Van todas **verticales**: 900 × 1200 px las de la galería, 1000 × 1333 px las
+tres destacadas. No hace falta recortarlas a medida: la página las encuadra
+sola con `object-fit`. Si una queda mal encuadrada, se ajusta el
+`object-position` de esa sección en el `styles.css`.
 
 Si cambiás una foto, cambiá también su texto alternativo (el `alt=` en el
-`index.html`), que describe lo que se ve para quien no puede verla.
+`index.html`), que describe lo que se ve para quien no puede verla. **Un `alt`
+que no coincide con la foto es peor que no tenerlo**, porque engaña.
 
 Son todas verticales porque el material real de una peluquería es el retrato:
 una foto apaisada corta el pelo justo donde se ve el trabajo. La del salón
 también, porque muestra el local a lo largo.
+
+### Si las fotos vienen del iPhone
+
+Las fotos del iPhone salen en **HEIC**, y **ningún navegador las muestra**. Hay
+que convertirlas a JPEG antes de subirlas. Además vienen enormes (4284 × 5712
+px, 3 MB cada una): conviene bajarlas a los tamaños de la tabla y guardarlas
+con calidad 82, que es donde dejan de pesar sin que se note.
 
 ### El logo
 
