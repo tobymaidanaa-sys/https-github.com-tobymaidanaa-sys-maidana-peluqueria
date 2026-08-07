@@ -167,8 +167,10 @@
 
 
   <!-- ============================================================
-       SERVICIOS — sin numeración: no son pasos de un proceso, así que
-       numerarlos sería decorar. Los precios están pendientes (TODO).
+       SERVICIOS — es la lista de precios real del salón, transcripta
+       tal cual del cartel: dos grupos, y los precios con asterisco son
+       "a partir de". Sin numerar y sin descripciones inventadas: cada
+       renglón dice lo que dice el cartel y nada más.
        ============================================================ -->
   <section class="seccion" id="servicios">
     <div class="ancho">
@@ -177,49 +179,115 @@
         <h2 class="h2">Lo que hacemos</h2>
       </div>
 
-      <ul class="servicios">
-        <li class="servicio">
-          <h3 class="servicio__t">Corte</h3>
-          <p class="servicio__d">Lavado, corte y secado. La forma se define en el espejo, con vos, antes de la primera tijera.</p>
-          <!-- TODO: precio. Reemplazá "Consultar" por el valor, ej: $ 18.000 -->
-          <span class="servicio__p">Consultar</span>
-        </li>
+      <div class="carta">
 
-        <li class="servicio">
-          <h3 class="servicio__t">Color</h3>
-          <p class="servicio__d">Coloración completa o retoque de raíz. El tono se elige contra tu piel, no contra un catálogo.</p>
-          <!-- TODO: precio -->
-          <span class="servicio__p">Consultar</span>
-        </li>
+        <div class="carta__grupo">
+          <h3 class="carta__t">Servicios</h3>
+          <ul class="carta__lista">
+            <li class="renglon">
+              <span class="renglon__n">Corte damas <span class="renglon__ac">secado incluido</span></span>
+              <span class="renglon__p">$ 46.900</span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Corte masculino</span>
+              <span class="renglon__p">$ 32.000</span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Corte niños</span>
+              <span class="renglon__p">$ 28.000</span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Lavado</span>
+              <span class="renglon__p">$ 6.500 / $ 9.900</span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Ampollas</span>
+              <span class="renglon__p">$ 26.000</span>
+            </li>
 
-        <li class="servicio">
-          <h3 class="servicio__t">Mechas y balayage</h3>
-          <p class="servicio__d">Iluminación hecha a mano, mecha por mecha, buscando que crezca parejo y sin castigar el largo.</p>
-          <!-- TODO: precio -->
-          <span class="servicio__p">Consultar</span>
-        </li>
+            <li class="renglon renglon--titulo">
+              <span class="renglon__n">Máscaras</span>
+            </li>
+            <li class="renglon renglon--hija">
+              <span class="renglon__n">HairTherapy</span>
+              <span class="renglon__p">$ 24.900</span>
+            </li>
+            <li class="renglon renglon--hija">
+              <span class="renglon__n">Framesi</span>
+              <span class="renglon__p">$ 36.900</span>
+            </li>
+            <li class="renglon renglon--hija">
+              <span class="renglon__n">L'Oréal</span>
+              <span class="renglon__p">$ 42.900</span>
+            </li>
+            <li class="renglon renglon--hija">
+              <span class="renglon__n">Davines</span>
+              <span class="renglon__p">$ 49.900</span>
+            </li>
 
-        <li class="servicio">
-          <h3 class="servicio__t">Tratamientos</h3>
-          <p class="servicio__d">Nutrición y reconstrucción para cabello trabajado. Siempre con diagnóstico previo del estado del pelo.</p>
-          <!-- TODO: precio -->
-          <span class="servicio__p">Consultar</span>
-        </li>
+            <li class="renglon">
+              <span class="renglon__n">Brushing</span>
+              <span class="renglon__p">$ 32.900 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Peinado suelto</span>
+              <span class="renglon__p">$ 42.900 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Peinado recogido</span>
+              <span class="renglon__p">$ 60.000 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Maquillaje <span class="renglon__ac">social</span></span>
+              <span class="renglon__p">$ 42.900</span>
+            </li>
+          </ul>
+        </div>
 
-        <li class="servicio">
-          <h3 class="servicio__t">Brushing y peinado</h3>
-          <p class="servicio__d">Para un evento o para un día cualquiera. Si venís con la foto de lo que tenés en la cabeza, mejor.</p>
-          <!-- TODO: precio -->
-          <span class="servicio__p">Consultar</span>
-        </li>
+        <div class="carta__grupo">
+          <h3 class="carta__t">Servicios técnicos</h3>
+          <ul class="carta__lista">
+            <li class="renglon">
+              <span class="renglon__n">Color con amoníaco <span class="renglon__ac">solo raíz · Wella / Schwarzkopf</span></span>
+              <span class="renglon__p">$ 49.900 / $ 99.800 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Color sin amoníaco <span class="renglon__ac">solo raíz · Wella / Schwarzkopf</span></span>
+              <span class="renglon__p">$ 58.900 / $ 117.800 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Mechas, balayage e iluminación</span>
+              <span class="renglon__p">$ 180.000 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Botox y cauterización <span class="renglon__ac">sin formol</span></span>
+              <span class="renglon__p">$ 42.900</span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Shock de keratina <span class="renglon__ac">sin formol</span></span>
+              <span class="renglon__p">$ 60.000 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+            <li class="renglon">
+              <span class="renglon__n">Alisado <span class="renglon__ac">sin formol</span></span>
+              <span class="renglon__p">$ 75.000 <b class="ast" aria-hidden="true">*</b></span>
+            </li>
+          </ul>
 
-        <li class="servicio">
-          <h3 class="servicio__t">Alisado</h3>
-          <p class="servicio__d">Alisado progresivo. Antes de aplicarlo se revisa el cabello y se conversa cuánto va a durar en tu caso.</p>
-          <!-- TODO: precio -->
-          <span class="servicio__p">Consultar</span>
-        </li>
-      </ul>
+          <p class="carta__nota">
+            <b class="ast" aria-hidden="true">*</b>
+            A partir de ese valor. Varía según la cantidad de producto que se
+            utilice.
+          </p>
+          <p class="carta__nota carta__nota--chica">
+            <!-- TODO: si los precios cambian, se actualizan acá y en ningún
+                 otro lado. Conviene poner la fecha de la última actualización
+                 abajo, para que nadie llegue con una lista vieja. -->
+            Precios de referencia. Si tenés dudas con alguno, escribinos y te
+            lo pasamos antes de reservar.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 

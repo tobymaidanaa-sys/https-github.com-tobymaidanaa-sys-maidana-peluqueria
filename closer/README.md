@@ -58,6 +58,32 @@ links: si lo cambiás, cambialo en los 5.
 
 Aparecen en dos lugares: la sección "Adentro" y el pie. Cambialos en los dos.
 
+## Los precios
+
+Están transcriptos del cartel del salón, en la sección "Servicios" del
+`index.html`, y **no se guardan en ningún otro lado**: se editan ahí y listo.
+Son dos grupos, `Servicios` y `Servicios técnicos`.
+
+Cada renglón es así:
+
+```html
+<li class="renglon">
+  <span class="renglon__n">Corte damas <span class="renglon__ac">secado incluido</span></span>
+  <span class="renglon__p">$ 46.900</span>
+</li>
+```
+
+- `renglon__n` es el nombre del servicio.
+- `renglon__ac` es la aclaración chica de abajo ("secado incluido", "sin
+  formol", "solo raíz"). Si no hace falta, se borra ese `<span>` entero.
+- `renglon__p` es el precio.
+- `<b class="ast">*</b>` es el asterisco de *"a partir de ese valor"*. Va sólo
+  en los precios que en el cartel lo tienen, y remite a la nota del final.
+- `renglon--titulo` es un renglón sin precio, que encabeza un grupo
+  (hoy, "Máscaras"). Los de abajo llevan `renglon--hija`, que los sangra.
+
+Para agregar o sacar un servicio, se copia o se borra un `<li>` entero.
+
 ## Cómo cambiar las fotos
 
 Ya están las fotos reales del salón. Para cambiar alguna, guardá la nueva
@@ -106,7 +132,8 @@ la tijera: a 32 píxeles la tijera se convierte en una mancha.
 Están marcados en el `index.html` con el comentario `<!-- TODO -->`, así se
 encuentran rápido:
 
-- [ ] **Precios de los servicios.** Los 6 dicen "Consultar".
+- [ ] **Fecha de actualización de los precios.** Conviene mostrarla, para que
+      nadie llegue con una lista vieja.
 - [ ] **Reseñas reales.** La sección existe y está vacía a propósito: dice que
       el espacio está reservado. Cuando lleguen las reseñas de verdad, se
       reemplaza el bloque `.resenas__vacio` por una lista y listo. **No se

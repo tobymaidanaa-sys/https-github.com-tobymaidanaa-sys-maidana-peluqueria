@@ -303,33 +303,69 @@ a:focus-visible, iframe:focus-visible{
 }
 
 /* ============================================================
-   SERVICIOS
+   SERVICIOS — la carta de precios. Dos grupos en columnas, y cada
+   renglón es nombre a la izquierda y precio a la derecha, separados
+   por una línea fina. Es como se lee una carta de verdad.
    ============================================================ */
-.servicios{
+.carta{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
-  background: var(--linea);
-  border: 1px solid var(--linea);
-  border-radius: var(--borde);
-  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
 }
-.servicio{
-  background: var(--crema);
-  padding: clamp(1.6rem, 3vw, 2.2rem);
-  display: flex; flex-direction: column;
-  transition: background .25s ease;
-}
-.servicio:hover{ background: #F8F4ED; }
 
-.servicio__t{ font-size: 1.42rem; margin-bottom: .55rem; }
-.servicio__d{ color: var(--gris); font-size: .98rem; margin-bottom: 1.2rem; }
-.servicio__p{
-  margin-top: auto;
-  font-size: .76rem; font-weight: 600;
-  letter-spacing: .14em; text-transform: uppercase;
-  color: var(--gris-tenue);
+.carta__t{
+  font-size: 1.5rem;
+  padding-top: 1.1rem;
+  border-top: 2px solid var(--rosa);
+  margin-bottom: .6rem;
 }
+
+.carta__lista{ margin: 0; }
+
+.renglon{
+  display: flex; align-items: baseline; gap: 1rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+.renglon:last-child{ border-bottom: 0; }
+
+.renglon__n{ flex: 1; }
+
+/* La aclaración del cartel ("secado incluido", "sin formol"): va debajo
+   del nombre y más chica, para que no compita con el servicio. */
+.renglon__ac{
+  display: block;
+  font-size: .78rem;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--gris-tenue);
+  margin-top: .18rem;
+}
+
+.renglon__p{
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--cacao);
+}
+
+/* "Máscaras" no tiene precio propio: es el título de las cuatro de abajo */
+.renglon--titulo{ padding-bottom: .35rem; border-bottom: 0; }
+.renglon--titulo .renglon__n{ font-weight: 600; }
+
+.renglon--hija{ padding-left: 1.35rem; }
+.renglon--hija .renglon__n{ color: var(--gris); }
+
+/* El asterisco del cartel: "a partir de ese valor". Va en marrón, no en
+   rosa: es una llamada a una nota que cambia el precio, tiene que leerse. */
+.ast{ color: var(--cacao); font-weight: 600; }
+
+.carta__nota{
+  margin-top: 1.5rem;
+  font-size: .88rem; line-height: 1.55;
+  color: var(--gris);
+}
+.carta__nota--chica{ margin-top: .7rem; color: var(--gris-tenue); }
 
 /* ============================================================
    GALERÍA
