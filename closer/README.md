@@ -62,15 +62,21 @@ inicio oscuro, negro cuando pasa a fondo claro.
 `assets/img/favicon.svg` es el iconito de la pestaña y lleva **sólo la C**,
 sin la tijera: a 32 píxeles la tijera se convierte en una mancha.
 
-Dos cosas importantes:
+### Por qué las fotos son lo único con color
 
-1. **Subilas a color.** La página las pasa a blanco y negro sola, por CSS. Si
-   algún día quieren verlas a color, se saca una línea del `styles.css`
-   (`img{ filter:grayscale(1); }`).
-2. Si guardás las fotos en `.jpg` en vez de `.svg`, hay que cambiar la
-   extensión en el `index.html` (buscá `trabajo-1.svg` y demás). Es más fácil
-   dejarlas con el nombre exacto de la tabla, pero en `.jpg` funciona igual
-   con ese único cambio.
+Las fotos van **a color** y todo el resto de la página —fondos, tipografía,
+botones— es blanco y negro. En una peluquería el color del pelo es el trabajo
+que se vende, así que dejarlo en escala de grises sería tapar justo lo que hay
+que mostrar. Y como no hay ningún otro color en la página, las fotos se llevan
+toda la atención solas.
+
+La única excepción es el **mapa**, que sigue en escala de grises a propósito:
+no es un trabajo del salón sino un elemento de interfaz, y a color mete los
+verdes y amarillos de Google. Si alguna vez lo quieren a color, se saca la
+línea `filter:grayscale(1);` de la regla `.mapa` en el `styles.css`.
+
+Guardá las fotos en `.jpg` con el nombre exacto de la tabla y no hay que tocar
+el `index.html`. Si le cambiás la extensión a alguna, cambiala también ahí.
 
 ## Datos escritos a mano en el HTML
 

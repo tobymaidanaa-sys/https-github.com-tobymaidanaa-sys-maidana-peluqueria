@@ -430,8 +430,9 @@ a{ color:inherit; }
 }
 .datos dd{ margin:0; font-size:1rem; }
 
-/* El mapa va en escala de grises, igual que las fotos, para que no
-   meta color en una página que no lo tiene. */
+/* El mapa sí va en escala de grises. No es un trabajo del salón: es un
+   elemento de interfaz, y a color mete verdes y amarillos que le pelean
+   la atención a las fotos, que son lo único que tiene que llevar color. */
 .mapa{
   display:block;
   width:100%;
