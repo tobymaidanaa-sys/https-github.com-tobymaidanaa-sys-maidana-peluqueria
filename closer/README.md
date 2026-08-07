@@ -89,6 +89,17 @@ Para agregar o sacar un servicio, se copia o se borra un `<li>` entero.
 Están todas las fotos reales del salón. Para cambiar alguna, guardá la nueva
 **con el mismo nombre de archivo** y no hay que tocar el HTML.
 
+### El orden de la galería no es alfabético
+
+En "Hecho en Closer" la **columna del medio de cada fila** lleva las fotos de
+**fondo liso y claro** (hoy `trabajo-3`, `trabajo-4` y `trabajo-6`), y las de
+ambiente del salón van a los costados. Eso arma una columna central limpia que
+sostiene la grilla. El orden en el HTML es `1, 3, 2 · 5, 4, 8 · 7, 6, 9`.
+
+Si sumás o cambiás fotos, respetá la regla: **fondo liso al medio, ambiente a
+los lados**. Vale sólo de 980px para arriba; abajo de eso la grilla pasa a dos
+columnas y el orden es el del HTML.
+
 | Archivo | Dónde aparece | Qué muestra hoy |
 |---|---|---|
 | `hero.jpg` | Adentro del espejo del inicio | Peinado de cola alta, de perfil |
@@ -151,6 +162,12 @@ encuentran rápido:
 - [ ] **Imagen para compartir** (`og:image`): una foto de 1200 × 630 px
       guardada como `assets/img/og.jpg`, y descomentar la línea del `<head>`.
 - [ ] **El logo original**, si existe: hoy está la reconstrucción vectorial.
+- [ ] **Las 5 fotos nuevas** (`nueva-1` a `nueva-5`). Van en
+      `closer/assets/img/nuevas/`. Cuando estén: `nueva-1` reemplaza la del
+      espejo del inicio, y `nueva-2` a `nueva-5` entran en la galería
+      siguiendo la regla de arriba. Se convierten a WebP antes de subirlas.
+- [ ] **Una foto del interior para "Adentro"**, al lado del mapa. Tiene que ser
+      del local, no un retrato: las cinco nuevas son todas de clientas.
 
 ## Las reseñas
 

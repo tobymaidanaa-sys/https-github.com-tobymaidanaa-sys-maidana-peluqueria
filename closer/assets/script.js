@@ -21,10 +21,15 @@
     anio.textContent = new Date().getFullYear();
   }
 
-  /* La cabecera se despega del fondo apenas se scrollea */
+  /* La cabecera se despega del fondo apenas se scrollea, y un poco más
+     abajo se achica. Son dos umbrales distintos a propósito: el borde
+     tiene que aparecer enseguida, pero encoger a los 12px se siente un
+     temblor. El achique en sí es CSS. */
   if (cabecera) {
     var marcarCabecera = function () {
-      cabecera.classList.toggle("esta-abajo", window.scrollY > 12);
+      var y = window.scrollY;
+      cabecera.classList.toggle("esta-abajo", y > 12);
+      cabecera.classList.toggle("esta-chica", y > 60);
     };
     marcarCabecera();
     window.addEventListener("scroll", marcarCabecera, { passive: true });

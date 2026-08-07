@@ -34,6 +34,12 @@
   --ancho: 1180px;
   --aire:  clamp(4.5rem, 9vw, 8rem);   /* respiro vertical entre secciones */
   --borde: 14px;
+
+  /* Escala de títulos: tres escalones y ninguno más. Todo título de la
+     página cae en uno de estos tres. No agregar tamaños sueltos. */
+  --t1: clamp(2.9rem, 7.2vw, 5.4rem);  /* h1 — solo el del inicio */
+  --t2: clamp(2.1rem, 4.6vw, 3.3rem);  /* h2 — cabeza de sección */
+  --t3: clamp(1.32rem, 1.6vw, 1.45rem);/* h3 — sub-bloque */
 }
 
 /* ---------- Base ---------- */
@@ -111,7 +117,7 @@ a:focus-visible, iframe:focus-visible{
 }
 .seccion--oscura .volanta{ color: var(--rosa); }
 
-.h2{ font-size: clamp(2.1rem, 4.6vw, 3.3rem); }
+.h2{ font-size: var(--t2); }
 
 .cabeza{ margin-bottom: clamp(2.5rem, 5vw, 3.75rem); max-width: 44ch; }
 .cabeza--centro{ margin-inline: auto; text-align: center; }
@@ -138,6 +144,8 @@ a:focus-visible, iframe:focus-visible{
 .boton--claro{ background: var(--rosa); color: var(--cacao); }
 .boton--claro:hover{ background: var(--rosa-tenue); }
 
+.carta__cta{ margin: clamp(2.5rem, 5vw, 3.5rem) 0 0; text-align: center; }
+
 /* ============================================================
    CABECERA
    ============================================================ */
@@ -147,34 +155,56 @@ a:focus-visible, iframe:focus-visible{
   backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
   transition: border-color .3s ease, background .3s ease;
+
+  /* Medidas de la cabecera en reposo. Al scrollear, .esta-chica las baja
+     ~18% y los tres elementos que las consumen se achican juntos. */
+  --alto-cab:  84px;
+  --logo-alto: 40px;
+  --marca-f:   clamp(1.4rem, 2.9vw, 1.95rem);
 }
 .cabecera.esta-abajo{
   border-bottom-color: var(--linea);
   background: color-mix(in srgb, var(--arena) 96%, transparent);
 }
+.cabecera.esta-chica{
+  --alto-cab:  68px;
+  --logo-alto: 33px;
+  --marca-f:   clamp(1.19rem, 2.45vw, 1.62rem);
+}
 
 .cabecera__in{
   display: flex; align-items: center; gap: 1.5rem;
-  min-height: 74px;
+  min-height: var(--alto-cab);
+  transition: min-height .3s ease;
 }
 
 /* Wordmark: las dos palabras van al mismo tamaño y con el mismo
-   formato, una al lado de la otra. El símbolo no va acá. */
+   formato, una al lado de la otra. El símbolo va a la izquierda.
+   Es el elemento dominante de la cabecera: el menú va por debajo. */
 .marca{
-  display: flex; gap: .42em;
+  display: flex; align-items: center; gap: .6rem;
   font-family: var(--display);
-  font-size: clamp(1.05rem, 2vw, 1.28rem);
-  font-weight: 500;
+  font-size: var(--marca-f);
+  font-weight: 600;
   letter-spacing: .01em;
   text-decoration: none;
+  transition: font-size .3s ease;
   margin-right: auto;
   white-space: nowrap;
 }
+.marca__txt{ display: flex; gap: .42em; }
 .marca__p{ font-size: 1em; font-weight: inherit; }
+/* El símbolo es negro y la cabecera es beige: va sin filtro (en el pie,
+   que es oscuro, el mismo archivo se invierte). */
+.marca__logo{
+  height: var(--logo-alto); width: auto; flex: none;
+  transition: height .3s ease;
+}
 
 .menu{ display: flex; gap: 1.75rem; }
 .menu a{
-  font-size: .9rem; font-weight: 500; text-decoration: none;
+  font-size: .82rem; font-weight: 400; letter-spacing: .02em;
+  text-decoration: none;
   color: var(--gris); padding-block: .35rem;
   border-bottom: 1px solid transparent;
   transition: color .2s ease, border-color .2s ease;
@@ -194,7 +224,7 @@ a:focus-visible, iframe:focus-visible{
 }
 
 .hero__h1{
-  font-size: clamp(2.9rem, 7.2vw, 5.4rem);
+  font-size: var(--t1);
   font-variation-settings: "opsz" 144;
   margin-bottom: 1.5rem;
 }
@@ -306,7 +336,7 @@ a:focus-visible, iframe:focus-visible{
   color: var(--gris);
 }
 .valor__t{
-  font-size: 1.32rem;
+  font-size: var(--t3);
   color: var(--cacao);
   margin-bottom: .6rem;
 }
@@ -324,7 +354,7 @@ a:focus-visible, iframe:focus-visible{
 }
 
 .carta__t{
-  font-size: 1.5rem;
+  font-size: var(--t3);
   padding-top: 1.1rem;
   border-top: 2px solid var(--rosa);
   margin-bottom: .6rem;
@@ -407,12 +437,20 @@ a:focus-visible, iframe:focus-visible{
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: start;
+  align-items: stretch;   /* la foto acompaña el alto del texto + mapa */
 }
 .salon__foto{
   margin: 0; overflow: hidden; border-radius: var(--borde);
 }
 .salon__foto img{ width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+
+/* En pantalla ancha la columna de la derecha (texto, datos y mapa) es
+   más alta que una 3:4: la foto se estira para que las dos columnas
+   terminen juntas y no quede un hueco abajo a la izquierda. */
+@media (min-width: 981px){
+  .salon__foto{ height: 100%; }
+  .salon__foto img{ height: 100%; aspect-ratio: auto; }
+}
 
 .salon__txt{ color: var(--gris); }
 .salon__txt .h2{ margin-bottom: 1.2rem; }
@@ -640,7 +678,10 @@ a:focus-visible, iframe:focus-visible{
 @media (max-width: 640px){
   body{ font-size: 1rem; }
   .cabecera__cta{ display: none; }
-  .marca{ font-size: 1.08rem; }
+  /* En celular no hay menú ni botón, así que la marca respira; se
+     redefinen las variables (no el font-size) para no romper el achique. */
+  .cabecera{            --alto-cab: 70px; --logo-alto: 34px; --marca-f: 1.32rem; }
+  .cabecera.esta-chica{ --alto-cab: 58px; --logo-alto: 28px; --marca-f: 1.12rem; }
   .pie__abajo{ grid-template-columns: 1fr; text-align: center; justify-items: center; }
   .pie__copy{ white-space: normal; }
   .barra{ display: block; }
