@@ -36,7 +36,14 @@
      ============================================================ -->
 <header class="head" id="head">
   <div class="wrap head__in">
-    <a class="head__logo" href="#inicio">Closer</a>
+    <!-- TODO: el logo (la C con la tijera). Guardalo como assets/img/logo.svg
+         y descomentá la línea del <img>. Tiene que ser SVG con fondo
+         transparente y el dibujo en negro; la página lo invierte sola cuando
+         va sobre el fondo oscuro. Hasta entonces queda el logotipo escrito. -->
+    <a class="head__logo" href="#inicio">
+      <!-- <img class="head__logo-img" src="assets/img/logo.svg" alt="Closer Peluquería"> -->
+      <span class="head__logo-txt">Closer</span>
+    </a>
 
     <nav class="head__nav" aria-label="Secciones">
       <a href="#trabajo">Servicios</a>
@@ -204,20 +211,23 @@
   <section class="section" id="salon">
     <div class="wrap salon">
       <figure class="salon__foto">
-        <img src="assets/img/salon.svg" width="1400" height="1000" loading="lazy"
-             alt="El salón de Closer Peluquería">
+        <img src="assets/img/salon.svg" width="1000" height="1250" loading="lazy"
+             alt="Interior del salón de Closer: puestos frente a los espejos, techo de hormigón y luz cálida">
       </figure>
 
       <div class="salon__txt">
         <p class="kicker">03 — El salón</p>
-        <h2 class="h2">Un sillón, una persona</h2>
+        <h2 class="h2">Adentro</h2>
         <p>
-          Closer trabaja con turno reservado y sin superponer clientas.
-          Nadie espera con el color puesto mientras atienden a otra.
+          Hormigón a la vista, luz cálida y plantas por todos lados.
+          Un local a la calle, con los puestos alineados frente a los espejos.
         </p>
+        <!-- TODO: confirmar que esto es así antes de publicar. Lo escribí a partir
+             del "un turno por vez" de la página; si trabajan con más de una persona
+             a la vez, avisá y lo reescribo. -->
         <p>
-          Eso también quiere decir que el turno es tuyo: si querés cambiar
-          algo a mitad de camino, hay tiempo para pensarlo.
+          Se trabaja con turno reservado, para que el tuyo sea tuyo: si querés
+          cambiar algo a mitad de camino, hay tiempo para pensarlo.
         </p>
 
         <dl class="datos">

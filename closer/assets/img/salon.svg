@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000" role="img" aria-label="Placeholder">
-  <rect width="1400" height="1000" fill="#d9d7d4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="1000" height="1250" role="img" aria-label="Placeholder">
+  <rect width="1000" height="1250" fill="#d9d7d4"/>
   <g stroke="#8d8d8d" stroke-width="2" opacity=".55">
-    <line x1="0" y1="0" x2="1400" y2="1000"/>
-    <line x1="1400" y1="0" x2="0" y2="1000"/>
-    <rect x="1" y="1" width="1398" height="998" fill="none"/>
+    <line x1="0" y1="0" x2="1000" y2="1250"/>
+    <line x1="1000" y1="0" x2="0" y2="1250"/>
+    <rect x="1" y="1" width="998" height="1248" fill="none"/>
   </g>
   <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#4a4a4a" text-anchor="middle">
-    <text x="700" y="494" font-size="30" letter-spacing="6">EL SALON</text>
-    <text x="700" y="534" font-size="22" letter-spacing="3" fill="#6f6f6f">1400 x 1000</text>
+    <text x="500" y="619" font-size="30" letter-spacing="6">EL SALON</text>
+    <text x="500" y="659" font-size="22" letter-spacing="3" fill="#6f6f6f">1000 x 1250</text>
   </g>
 </svg>

@@ -189,12 +189,23 @@ a{ color:inherit; }
 .head__in{ display:flex; align-items:center; gap:2rem; }
 
 .head__logo{
+  display:flex; align-items:center;
   font-family:var(--display);
   font-size:1.55rem;
   letter-spacing:.02em;
   text-decoration:none;
   margin-right:auto;
 }
+
+/* El logo va en negro sobre transparente. Arriba del todo el header está
+   sobre el fondo oscuro del inicio, así que se invierte a blanco; cuando
+   el header pasa a fondo claro, vuelve a su negro original. */
+.head__logo-img{
+  height:30px; width:auto;
+  filter:invert(1);
+  transition:filter .4s var(--ease);
+}
+.head.is-scrolled .head__logo-img{ filter:invert(0); }
 
 .head__nav{ display:flex; gap:1.9rem; }
 .head__nav a{
@@ -384,14 +395,17 @@ a{ color:inherit; }
 /* -----------------------------------------------------------
    8. El salón
    ----------------------------------------------------------- */
+/* La foto del local también es vertical: muestra el fondo del salón,
+   que es lo que da la idea del lugar. Por eso ocupa menos ancho que
+   el texto y va más alta. */
 .salon{
   display:grid;
-  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  grid-template-columns:minmax(0,.82fr) minmax(0,1fr);
   gap:clamp(2rem, 6vw, 5rem);
   align-items:center;
 }
 .salon__foto{ margin:0; overflow:hidden; }
-.salon__foto img{ width:100%; aspect-ratio:7/5; object-fit:cover; }
+.salon__foto img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
 
 .salon__txt p{ max-width:44ch; color:var(--gris); }
 .salon__txt .h2{ margin-bottom:1.6rem; color:var(--ink); }
